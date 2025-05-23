@@ -73,6 +73,13 @@
         <option value="random_speaking">Random Speaking</option>
       </select>
     </div>
+    
+<div id="grammarOptions" class="hidden">
+  <button id="verbPracticeBtn">Practice Verbs</button>
+  <button id="genderPracticeBtn" class="hidden">Practice Gender</button>
+</div>
+
+<div id="output"></div>
 
     <button id="show-button">Show</button>
   </div>
@@ -853,84 +860,8 @@
       }
     };
 
-    // 2. IMPROVED VOICE HANDLING
-    const voiceLanguageMap = {
-      COSYenglish: { lang: "en-US", voiceURI: "Google US English" },
-      COSYfrançais: { lang: "fr-FR", voiceURI: "Google français" },
-      COSYitaliano: { lang: "it-IT", voiceURI: "Google italiano" },
-      COSYespañol: { lang: "es-ES", voiceURI: "Google español" },
-      COSYportuguês: { lang: "pt-PT", voiceURI: "Google português" },
-      COSYdeutsch: { lang: "de-DE", voiceURI: "Google Deutsch" },
-      ΚΟΖΥελληνικά: { lang: "el-GR", voiceURI: "Google ελληνικά" },
-      ТАКОЙрусский: { lang: "ru-RU", voiceURI: "Google русский" },
-      ԾՈՍՅհայկական: { lang: "hy-AM", voiceURI: "" }
-    };
-
-    // Function to get the best available voice
-    function getBestVoice(languageCode, voiceURI) {
-      const voices = window.speechSynthesis.getVoices();
-      
-      // First try to find exact match by voiceURI
-      if (voiceURI) {
-        const exactVoice = voices.find(v => v.voiceURI === voiceURI);
-        if (exactVoice) return exactVoice;
-      }
-      
-      // Then try to find by language
-      const langVoices = voices.filter(v => v.lang === languageCode);
-      if (langVoices.length > 0) {
-        // Prefer voices with localService (usually higher quality)
-        const localServiceVoice = langVoices.find(v => v.localService);
-        if (localServiceVoice) return localServiceVoice;
-        
-        // Return the first available voice for the language
-        return langVoices[0];
-      }
-      
-      // Fallback to any available voice
-      return voices[0] || null;
-    }
-
-    // Function to speak text with selected voice and language
-    function speakText(text, language) {
-      if (!window.speechSynthesis) {
-        console.warn("Speech synthesis not supported");
-        return;
-      }
-
-      // Cancel any ongoing speech
-      window.speechSynthesis.cancel();
-
-      // Create a new utterance
-      const utterance = new SpeechSynthesisUtterance(text);
-      
-      // Get voice settings for the language
-      const voiceSettings = voiceLanguageMap[language] || voiceLanguageMap.COSYenglish;
-      
-      // Try to get the best voice available
-      const voice = getBestVoice(voiceSettings.lang, voiceSettings.voiceURI);
-      
-      if (voice) {
-        utterance.voice = voice;
-        utterance.lang = voice.lang;
-        
-        // Adjust speech rate and pitch for more natural sound
-        utterance.rate = 0.9; // Slightly slower than default
-        utterance.pitch = 1.0; // Normal pitch
-      }
-
-      // Speak the text
-      window.speechSynthesis.speak(utterance);
-    }
-
-    // Select DOM elements
-    const languageSelect = document.getElementById("language-select");
-    const daySelect = document.getElementById("day-select");
-    const dayFromSelect = document.getElementById("day-from-select");
-    const dayToSelect = document.getElementById("day-to-select");
-    const practiceTypeSelect = document.getElementById("practice-type-select");
-    const showButton = document.getElementById("show-button");
-    const resultContainer = document.getElementById("result-container");
+    
+    
 
     // Validate range input: dayFrom <= dayTo
     function validDayRange(from, to) {
@@ -943,213 +874,8 @@
       return arr[Math.floor(Math.random() * arr.length)];
     }
 
-    // Main function to handle the "Show" button click
-    showButton.addEventListener("click", () => {
-      const language = languageSelect.value;
-      const day = daySelect.value;
-      const dayFrom = dayFromSelect.value;
-      const dayTo = dayToSelect.value;
-      const practiceType = practiceTypeSelect.value;
+    
 
-      // Clear previous result
-      resultContainer.innerHTML = "";
-
-      // Validation
-      if (!language) {
-        alert("Please select a language.");
-        return;
-      }
-      if (!practiceType) {
-        alert("Please select a type of practice.");
-        return;
-      }
-      // Check that either day is selected OR a valid range is selected
-      if (!day && !(dayFrom && dayTo && validDayRange(dayFrom, dayTo))) {
-        alert("Please select either a day or a valid day range (from <= to).");
-        return;
-      }
-
-      // Determine day(s) to select from
-      let daysToUse = [];
-      if (day) {
-        daysToUse = [Number(day)];
-      } else if (dayFrom && dayTo && validDayRange(dayFrom, dayTo)) {
-        for (let d = Number(dayFrom); d <= Number(dayTo); d++) {
-          daysToUse.push(d);
-        }
-      }
-
-      // Depending on practiceType, get the random content
-      switch (practiceType) {
-        case "random_word":
-          {
-            // Random word from selected day(s)
-            let combinedWords = [];
-            for (const d of daysToUse) {
-              if (vocabData[language][d]) combinedWords = combinedWords.concat(vocabData[language][d]);
-            }
-            if (combinedWords.length === 0) {
-              resultContainer.textContent = "No words found for this selection.";
-              break;
-            }
-            const word = randomElement(combinedWords);
-            resultContainer.textContent = word;
-            speakText(word, language);
-          }
-          break;
-
-        case "random_grammar":
-          {
-            let combinedGrammar = [];
-            for (const d of daysToUse) {
-              if (grammarData[language][d]) {
-                if (d === 3) {
-                  // For day 3, show options to choose grammar type
-                  const optionsDiv = document.createElement("div");
-                  optionsDiv.className = "grammar-options";
-                  
-                  const questions = questionTranslations[language] || questionTranslations.COSYenglish;
-                  optionsDiv.innerHTML = `<p>${questions.choose}</p>`;
-                  
-                  const options = grammarOptionsText[language] || grammarOptionsText.COSYenglish;
-                  
-                  const toHaveOption = document.createElement("div");
-                  toHaveOption.className = "grammar-option";
-                  toHaveOption.textContent = options.to_have;
-                  toHaveOption.addEventListener("click", () => {
-                    const grammar = randomElement(grammarData[language][d].to_have);
-                    resultContainer.innerHTML = "";
-                    resultContainer.appendChild(document.createTextNode(grammar));
-                    speakText(grammar, language);
-                  });
-                  
-                  const possessivesOption = document.createElement("div");
-                  possessivesOption.className = "grammar-option";
-                  possessivesOption.textContent = options.possessives;
-                  possessivesOption.addEventListener("click", () => {
-                    const grammar = randomElement(grammarData[language][d].possessives);
-                    resultContainer.innerHTML = "";
-                    resultContainer.appendChild(document.createTextNode(grammar));
-                    speakText(grammar, language);
-                  });
-                  
-                  optionsDiv.appendChild(toHaveOption);
-                  optionsDiv.appendChild(possessivesOption);
-                  resultContainer.appendChild(optionsDiv);
-                  return;
-                } else {
-                  combinedGrammar = combinedGrammar.concat(grammarData[language][d]);
-                }
-              }
-            }
-            
-            if (combinedGrammar.length === 0) {
-              resultContainer.textContent = "No grammar data found for this selection.";
-              break;
-            }
-            
-            const grammar = randomElement(combinedGrammar);
-            resultContainer.textContent = grammar;
-            speakText(grammar, language);
-          }
-          break;
-
-        case "random_speaking":
-          {
-            // Random speaking phrase from selected day(s)
-            let combinedSpeaking = [];
-            for (const d of daysToUse) {
-              if (speakingData[language][d]) combinedSpeaking = combinedSpeaking.concat(speakingData[language][d]);
-            }
-            if (combinedSpeaking.length === 0) {
-              resultContainer.textContent = "No speaking data found for this selection.";
-              break;
-            }
-            const phrase = randomElement(combinedSpeaking);
-            resultContainer.textContent = phrase;
-            speakText(phrase, language);
-          }
-          break;
-
-        case "random_image":
-          {
-            // Random image from selected day(s)
-            let combinedImages = [];
-            for (const d of daysToUse) {
-              if (imageData.allLanguages[d]) {
-                combinedImages = combinedImages.concat(imageData.allLanguages[d]);
-              }
-            }
-            if (combinedImages.length === 0) {
-              resultContainer.textContent = "No images found for this selection.";
-              break;
-            }
-            const imgObj = randomElement(combinedImages);
-            
-            // Create container for image and caption
-            const container = document.createElement("div");
-            container.className = "image-container";
-            
-            // Get questions in selected language
-            const questions = questionTranslations[language] || questionTranslations.COSYenglish;
-            
-            // Create question based on day
-            const questionDiv = document.createElement("div");
-            questionDiv.className = "image-question";
-            
-            if (daysToUse.includes(1)) {
-              questionDiv.textContent = questions.what;
-            } else {
-              questionDiv.innerHTML = `${questions.who}<br>${questions.what}`;
-            }
-            
-            // Create image element
-            const imgElem = document.createElement("img");
-            imgElem.src = imgObj.src;
-            imgElem.className = "vocab-image";
-            
-            // Use translated alt text if available
-            const altText = imgObj.translations?.[language] || imgObj.alt || "Image";
-            imgElem.alt = altText;
-            
-            // Create caption element
-            const caption = document.createElement("div");
-            caption.className = "image-caption";
-            caption.textContent = altText;
-            
-            // Add click event to toggle caption visibility
-            imgElem.addEventListener("click", () => {
-              caption.style.display = caption.style.display === "none" ? "block" : "none";
-            });
-            
-            // Initially hide the caption
-            caption.style.display = "none";
-            
-            // Add elements to container
-            container.appendChild(questionDiv);
-            container.appendChild(imgElem);
-            container.appendChild(caption);
-            
-            // Add container to result
-            resultContainer.appendChild(container);
-          }
-          break;
-
-        default:
-          resultContainer.textContent = "Invalid practice type selected.";
-      }
-    });
-
-    // Load voices asynchronously - workaround for some browsers
-    if (typeof speechSynthesis !== "undefined") {
-      // Some browsers need this to populate voices
-      speechSynthesis.onvoiceschanged = () => {
-        console.log("Voices changed, available voices:", window.speechSynthesis.getVoices());
-      };
-      
-      // Try to preload voices
-      window.speechSynthesis.getVoices();
-    }
   </script>
 
 </body>
