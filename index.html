@@ -100,7 +100,7 @@
     // Data sets with full phrases/statements
     const vocabData = {
       COSYenglish: {
-        1: ["Hello", "Goodbye", "Thank you", "You're welcome", "One coffee, please", "One tea, please", "Cash", "Card", "Wine", "Beer", "Water", "Juice", "Alright", "Sorry"],
+        1: ["Hello", "Goodbye", "Yes", "No", "Thank you", "You're welcome", "One coffee, please", "One tea, please", "Cash", "Card"],
         2: ["Boy", "Girl", "Teacher", "Student", "Woman", "Man", "Person", "Thing", "What", "Who", "Nice to meet you", "For me", "Drink", "No problem"],
         3: ["Mother", "Father", "Son", "Daughter", "Sister", "Brother", "Husband", "Wife", "Friend"],
         4: ["Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine"],
@@ -108,12 +108,12 @@
         6: []
       },
       COSYfrançais: {
-        1: ["Bonjour", "Au revoir", "Merci", "De rien", "Un café, s'il vous plaît", "Un thé, s'il vous plaît", "Espèces", "La carte", "Le vin", "La bière", "L'eau", "Le jus", "D'accord", "Désolé.e"],
+        1: ["Bonjour", "Au revoir", "Oui", "Non", "Merci", "De rien", "Un café, s'il vous plaît", "Un thé, s'il vous plaît", "Espèces", "La carte"],
         2: ["Le garçon", "La fille", "Le professeur", "La professeur", "L'étudiant", "L'étudiante", "La femme", "L'homme", "La personne", "La chose", "Enchanté.e", "Pour moi", "La boission", "Pas de problème"],
         3: ["La mère", "Le père", "Le fils", "La fille", "La sœur", "Le frère", "Le mari", "La femme", "L'ami", "L'amie"],
       },
       COSYitaliano: {
-        1: ["Ciao", "Addio", "Grazie", "Prego", "Un caffè, per favore", "Un tè, per favore", "Contanti", "La carta", "Il vino", "La birra", "L'acqua", "Il succo", "Bene","Scusi.a"], 
+        1: ["Ciao", "Addio", "Sì", "No", "Grazie", "Prego", "Un caffè, per favore", "Un tè, per favore", "Contanti", "La carta"], 
         2: ["Il ragazzo", "La ragazza", "Il professore", "La professoressa", "Lo studente", "La studentessa", "La donna", "L'uomo", "La persona", "La cosa", "Piacere", "Per me", "La bevanda", "Nessun problema"],
         3: ["la madre", "Il padre", "Il figlio", "La figlia", "La sorella", "Fratello", "Marito", "Moglie", "Amico/a"]
       },
@@ -127,7 +127,7 @@
         
       },
       ΚΟΖΥελληνικά: {
-        1: ["Γειά", "Αντίο", "Ευχαριστώ", "Παρακαλώ", "Έναν καφέ, παρακαλώ", "Ένα τσάι, παρακαλώ", "Μετρητά", "Η κάρτα", "Το κρασί", "Η μπύρα", "Το νερό", "Ο χυμός", "Εντάξει", "Συγγνώμη"],
+        1: ["Γειά σου", "Αντίο", "Όχι", "Ναι", "Ευχαριστώ", "Παρακαλώ", "Έναν καφέ, παρακαλώ", "Ένα τσάι, παρακαλώ", "Μετρητά", "Η κάρτα"],
         2: ["Το αγόρι", "Το κορίτσι", "Ο δάσκαλος", "Η δασκάλα", "Ο μαθητής", "Η μαθήτρια", "Η γυναίκα", "Ο άντρας", "Το άτομο", "Το πράγμα", "Χαίρω πολύ", "Για μένα", "Το ποτό", "Κανένα πρόβλημα"],
         3: ["Μητέρα", "Πατέρας", "Γιος", "Κόρη", "Αδερφή", "Αδερφός", "Σύζυγος", "Σύζυγος", "Φίλος/Φίλη"]
       },
@@ -371,7 +371,7 @@
               COSYespañol: "",
               COSYportuguês: "",
               COSYdeutsch: "",
-              ΚΟΖΥελληνικά: "Εικόνα χαιρετισμού",
+              ΚΟΖΥελληνικά: "Γεια σου",
               ТАКОЙрусский: "",
               ԾՈՍՅհայկական: ""
             }
@@ -384,7 +384,189 @@
               COSYespañol: "",
               COSYportuguês: "",
               COSYdeutsch: "",
-              ΚΟΖΥελληνικά: "Εικόνα αποχαιρετισμού",
+              ΚΟΖΥελληνικά: "Αντίο",
+              ТАКОЙрусский: "",
+              ԾՈՍՅհայկական: ""
+            }
+          },
+          { src: "https://knowt-user-attachments.s3.amazonaws.com/90fa8c25-9aba-424e-a7fd-adcfdd22cccd.jpg", alt: "Yes",
+            translations: {
+              COSYenglish: "Yes",
+              COSYfrançais: "Oui",
+              COSYitaliano: "Sì",
+              COSYespañol: "",
+              COSYportuguês: "",
+              COSYdeutsch: "",
+              ΚΟΖΥελληνικά: "Ναι",
+              ТАКОЙрусский: "",
+              ԾՈՍՅհայկական: ""
+            }
+          },
+          { src: "https://knowt-user-attachments.s3.amazonaws.com/490e0478-36f3-4f3f-90e0-f1ac3a63be42.jpg", alt: "No",
+            translations: {
+              COSYenglish: "No",
+              COSYfrançais: "Non",
+              COSYitaliano: "No",
+              COSYespañol: "",
+              COSYportuguês: "",
+              COSYdeutsch: "",
+              ΚΟΖΥελληνικά: "Όχι",
+              ТАКОЙрусский: "",
+              ԾՈՍՅհայկական: ""
+            }
+          },
+          { src: "https://knowt-user-attachments.s3.amazonaws.com/382b39c4-db7d-4fe0-a5d1-fc560bfabfd4.jpg", alt: "Thank you",
+            translations: {
+              COSYenglish: "Thank you",
+              COSYfrançais: "Merci",
+              COSYitaliano: "Grazie",
+              COSYespañol: "",
+              COSYportuguês: "",
+              COSYdeutsch: "",
+              ΚΟΖΥελληνικά: "Ευχαριστώ",
+              ТАКОЙрусский: "",
+              ԾՈՍՅհայկական: ""
+            }
+          },
+          { src: "https://knowt-user-attachments.s3.amazonaws.com/3cde6331-ebd8-443d-876b-c7100f7cfc9d.jpg", alt: "You're welcome",
+            translations: {
+              COSYenglish: "You're welcome",
+              COSYfrançais: "De rien",
+              COSYitaliano: "Prego",
+              COSYespañol: "",
+              COSYportuguês: "",
+              COSYdeutsch: "",
+              ΚΟΖΥελληνικά: "Παρακαλώ",
+              ТАКОЙрусский: "",
+              ԾՈՍՅհայկական: ""
+            }
+          },
+          { src: "https://knowt-user-attachments.s3.amazonaws.com/a7c44794-c2d9-4a27-93c4-42827de4025e.jpg", alt: "Alright",
+            translations: {
+              COSYenglish: "Alright",
+              COSYfrançais: "D'accord",
+              COSYitaliano: "Bene",
+              COSYespañol: "",
+              COSYportuguês: "",
+              COSYdeutsch: "",
+              ΚΟΖΥελληνικά: "Εντάξει",
+              ТАКОЙрусский: "",
+              ԾՈՍՅհայկական: ""
+            }
+          },
+          { src: "https://knowt-user-attachments.s3.amazonaws.com/ddc67279-12a7-497d-a260-0b6f0c24fc87.jpg", alt: "Sorry",
+            translations: {
+              COSYenglish: "Sorry",
+              COSYfrançais: "Désolé.e",
+              COSYitaliano: "Scusi.a",
+              COSYespañol: "",
+              COSYportuguês: "",
+              COSYdeutsch: "",
+              ΚΟΖΥελληνικά: "Συγνώμη",
+              ТАКОЙрусский: "",
+              ԾՈՍՅհայկական: ""
+            }
+          },
+          { src: "https://knowt-user-attachments.s3.amazonaws.com/3451f95e-17be-4cb7-a595-8228443a8bd1.jpg", alt: "Water",
+            translations: {
+              COSYenglish: "Water",
+              COSYfrançais: "L'eau",
+              COSYitaliano: "L'acqua",
+              COSYespañol: "",
+              COSYportuguês: "",
+              COSYdeutsch: "",
+              ΚΟΖΥελληνικά: "το νερό",
+              ТАКОЙрусский: "",
+              ԾՈՍՅհայկական: ""
+            }
+          },
+          { src: "https://knowt-user-attachments.s3.amazonaws.com/9e4a4ad3-1dbb-40f7-bb45-d167b39e4a74.jpg", alt: "Juice",
+            translations: {
+              COSYenglish: "Juice",
+              COSYfrançais: "Le jus",
+              COSYitaliano: "Il succo",
+              COSYespañol: "",
+              COSYportuguês: "",
+              COSYdeutsch: "",
+              ΚΟΖΥελληνικά: "ο χυμός",
+              ТАКОЙрусский: "",
+              ԾՈՍՅհայկական: ""
+            }
+          },
+          { src: "https://knowt-user-attachments.s3.amazonaws.com/3bc85631-fdfe-4541-a663-d1f1cbbe386a.jpg", alt: "Beer",
+            translations: {
+              COSYenglish: "Beer",
+              COSYfrançais: "La bière",
+              COSYitaliano: "La birra",
+              COSYespañol: "",
+              COSYportuguês: "",
+              COSYdeutsch: "",
+              ΚΟΖΥελληνικά: "η μπύρα",
+              ТАКОЙрусский: "",
+              ԾՈՍՅհայկական: ""
+            }
+          },
+          { src: "https://knowt-user-attachments.s3.amazonaws.com/45878c62-cc5f-47fe-ae32-59847af15bda.jpg", alt: "Wine",
+            translations: {
+              COSYenglish: "Wine",
+              COSYfrançais: "Le vin",
+              COSYitaliano: "Il vino",
+              COSYespañol: "",
+              COSYportuguês: "",
+              COSYdeutsch: "",
+              ΚΟΖΥελληνικά: "το κρασί",
+              ТАКОЙрусский: "",
+              ԾՈՍՅհայկական: ""
+            }
+          },
+          { src: "https://knowt-user-attachments.s3.amazonaws.com/830e8e98-43e7-4dc8-9d87-4c3fef5e2890.jpg", alt: "Coffee",
+            translations: {
+              COSYenglish: "Coffee",
+              COSYfrançais: "Le café",
+              COSYitaliano: "Il caffè",
+              COSYespañol: "",
+              COSYportuguês: "",
+              COSYdeutsch: "",
+              ΚΟΖΥελληνικά: "ο καφές",
+              ТАКОЙрусский: "",
+              ԾՈՍՅհայկական: ""
+            }
+          },
+          { src: "https://knowt-user-attachments.s3.amazonaws.com/6a4e0b1d-f9ee-4a2b-a2f9-9dabef5ff864.jpg", alt: "Tea",
+            translations: {
+              COSYenglish: "Tea",
+              COSYfrançais: "Le thé",
+              COSYitaliano: "Il tè",
+              COSYespañol: "",
+              COSYportuguês: "",
+              COSYdeutsch: "",
+              ΚΟΖΥελληνικά: "το τσάι",
+              ТАКОЙрусский: "",
+              ԾՈՍՅհայկական: ""
+            }
+          },
+          { src: "https://knowt-user-attachments.s3.amazonaws.com/64259323-b73a-4c2b-80ab-4c5271331bf0.jpg", alt: "Card",
+            translations: {
+              COSYenglish: "Card",
+              COSYfrançais: "La carte",
+              COSYitaliano: "La carta",
+              COSYespañol: "",
+              COSYportuguês: "",
+              COSYdeutsch: "",
+              ΚΟΖΥελληνικά: "η κάρτα",
+              ТАКОЙрусский: "",
+              ԾՈՍՅհայկական: ""
+            }
+          },
+          { src: "https://knowt-user-attachments.s3.amazonaws.com/c1a57a8c-d319-458a-ab77-dcda4b675b37.jpg", alt: "Cash",
+            translations: {
+              COSYenglish: "Cash",
+              COSYfrançais: "Les espèces",
+              COSYitaliano: "I contanti",
+              COSYespañol: "",
+              COSYportuguês: "",
+              COSYdeutsch: "",
+              ΚΟΖΥελληνικά: "τα μετρητά",
               ТАКОЙрусский: "",
               ԾՈՍՅհայկական: ""
             }
