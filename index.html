@@ -19,6 +19,8 @@
     .image-container {
       position: relative;
       display: inline-block;
+      text-align: center;
+      margin: 20px;
     }
     
     .image-caption {
@@ -32,6 +34,34 @@
       text-align: center;
       display: none; /* Initially hidden */
     }
+    
+    .image-question {
+      font-weight: bold;
+      margin-bottom: 10px;
+      font-size: 1.2em;
+      color: #333;
+      text-align: center;
+    }
+    
+    .grammar-options {
+      margin: 10px 0;
+      padding: 10px;
+      background: #f5f5f5;
+      border-radius: 5px;
+    }
+    
+    .grammar-option {
+      margin: 5px;
+      padding: 5px 10px;
+      background: #e0e0e0;
+      border-radius: 3px;
+      cursor: pointer;
+      display: inline-block;
+    }
+    
+    .grammar-option:hover {
+      background: #d0d0d0;
+    }
   </style>
 </head>
 <body>
@@ -39,7 +69,6 @@
   <h1>COSYlanguages</h1>
 
   <div id="selectors-container">
-    <!-- Rest of your existing HTML remains the same -->
     <div class="selector-group" id="language-day-selectors">
       <label for="language-select">Choose language:</label>
       <select id="language-select">
@@ -166,16 +195,20 @@
           "are",
           "is"
         ],
-        3: [
-          "I",
-          "You",
-          "He",
-          "She",
-          "It",
-          "have",
-          "has",
-          "Possessives (examples): my mother, your sister, his son, her husband."
-        ]
+        3: {
+          to_have: [
+            "I",
+            "You",
+            "He",
+            "She",
+            "It",
+            "have",
+            "has"
+          ],
+          possessives: [
+            "Possessives (examples): my mother, your sister, his son, her husband."
+          ]
+        }
       },
       COSYfrançais: {
         2: [
@@ -188,17 +221,21 @@
           "es",
           "est"
         ],
-        3: [
-          "J'",
-          "Tu",
-          "Il",
-          "Elle",
-          "Ce",
-          "ai",
-          "as",
-          "a",
-          "Possessifs (exemples) : ma mère, ta sœur, son fils, son mari."
-        ]
+        3: {
+          to_have: [
+            "J'",
+            "Tu",
+            "Il",
+            "Elle",
+            "Ce",
+            "ai",
+            "as",
+            "a"
+          ],
+          possessives: [
+            "Possessifs (exemples) : ma mère, ta sœur, son fils, son mari."
+          ]
+        }
       },
       COSYitaliano: {
         2: [
@@ -210,16 +247,20 @@
           "sei",
           "è"
         ],
-        3: [
-          "Io",
-          "Tu",
-          "Lui",
-          "Lei",
-          "ho",
-          "hai",
-          "ha",
-          "Possessivi (esempi): mia madre, tua sorella, suo figlio, suo marito."
-        ]
+        3: {
+          to_have: [
+            "Io",
+            "Tu",
+            "Lui",
+            "Lei",
+            "ho",
+            "hai",
+            "ha"
+          ],
+          possessives: [
+            "Possessivi (esempi): mia madre, tua sorella, suo figlio, suo marito."
+          ]
+        }
       },
       COSYespañol: {
         
@@ -241,17 +282,21 @@
           "είσαι",
           "είναι"
         ],
-        3: [
-          "Εγώ",
-          "Εσύ",
-          "Αυτός",
-          "Αυτή",
-          "Αυτό",
-          "έχω",
-          "έχεις",
-          "έχει",
-          "Κτητικές αντωνυμίες (παραδείγματα): η μητέρα μου, η αδερφή σου, ο γιος του, ο σύζυγός της."
-        ]
+        3: {
+          to_have: [
+            "Εγώ",
+            "Εσύ",
+            "Αυτός",
+            "Αυτή",
+            "Αυτό",
+            "έχω",
+            "έχεις",
+            "έχει"
+          ],
+          possessives: [
+            "Κτητικές αντωνυμίες (παραδείγματα): η μητέρα μου, η αδερφή σου, ο γιος του, ο σύζυγός της."
+          ]
+        }
       },
       ТАКОЙрусский: {
         
@@ -729,7 +774,7 @@
       }
     };
 
-    // 2. IMPROVED VOICE HANDLING
+   // 2. IMPROVED VOICE HANDLING
     const voiceLanguageMap = {
       COSYenglish: { lang: "en-US", voiceURI: "Google US English" },
       COSYfrançais: { lang: "fr-FR", voiceURI: "Google français" },
