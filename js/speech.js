@@ -1,16 +1,16 @@
 const voiceLanguageMap = {
-  COSYenglish: { lang: "en-US", voiceURI: "Google US English" },
-  COSYfrançais: { lang: "fr-FR", voiceURI: "Google français" },
-  COSYitaliano: { lang: "it-IT", voiceURI: "Google italiano" },
-  COSYespañol: { lang: "es-ES", voiceURI: "Google español" },
-  COSYportuguês: { lang: "pt-PT", voiceURI: "Google português" },
-  COSYdeutsch: { lang: "de-DE", voiceURI: "Google Deutsch" },
-  ΚΟΖΥελληνικά: { lang: "el-GR", voiceURI: "Google ελληνικά" },
-  ТАКОЙрусский: { lang: "ru-RU", voiceURI: "Google русский" },
-  ԾՈՍՅհայկական: { lang: "hy-AM", voiceURI: "" }
-};
+      COSYenglish: { lang: "en-US", voiceURI: "Google US English" },
+      COSYfrançais: { lang: "fr-FR", voiceURI: "Google français" },
+      COSYitaliano: { lang: "it-IT", voiceURI: "Google italiano" },
+      COSYespañol: { lang: "es-ES", voiceURI: "Google español" },
+      COSYportuguês: { lang: "pt-PT", voiceURI: "Google português" },
+      COSYdeutsch: { lang: "de-DE", voiceURI: "Google Deutsch" },
+      ΚΟΖΥελληνικά: { lang: "el-GR", voiceURI: "Google ελληνικά" },
+      ТАКОЙрусский: { lang: "ru-RU", voiceURI: "Google русский" },
+      ԾՈՍՅհայկական: { lang: "hy-AM", voiceURI: "" }
+    };
 
-// Function to get the best available voice
+    // Function to get the best available voice
     function getBestVoice(languageCode, voiceURI) {
       const voices = window.speechSynthesis.getVoices();
       
@@ -35,7 +35,7 @@ const voiceLanguageMap = {
       return voices[0] || null;
     }
 
-// Function to speak text with selected voice and language
+    // Function to speak text with selected voice and language
     function speakText(text, language) {
       if (!window.speechSynthesis) {
         console.warn("Speech synthesis not supported");
@@ -67,10 +67,15 @@ const voiceLanguageMap = {
       window.speechSynthesis.speak(utterance);
     }
 
-// Load voices async on load
-if (typeof speechSynthesis !== "undefined") {
-  speechSynthesis.onvoiceschanged = () => {
-    console.log("Voices changed:", window.speechSynthesis.getVoices());
-  };
-  window.speechSynthesis.getVoices();
-}
+
+
+// Load voices asynchronously - workaround for some browsers
+    if (typeof speechSynthesis !== "undefined") {
+      // Some browsers need this to populate voices
+      speechSynthesis.onvoiceschanged = () => {
+        console.log("Voices changed, available voices:", window.speechSynthesis.getVoices());
+      };
+      
+      // Try to preload voices
+      window.speechSynthesis.getVoices();
+    }
