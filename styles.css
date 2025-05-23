@@ -98,22 +98,5 @@
     option[data-bg="ΚΟΖΥελληνικά"] { background-color: #023047; color: #fff; }
     option[data-bg="ТАКОЙрусский"] { background-color: #fb8500; color: #000; }
     option[data-bg="ԾՈՍՅհայկական"] { background-color: #fb8500; color: #000; }
-
-/* Dice styling */
-
-.dice-container {
-  background-color: #f0f8f8;
-  padding: 20px;
-  margin: 20px auto;
-  border-radius: 8px;
-  text-align: center;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-.dice-result {
-  margin-top: 20px;
-  font-size: 24px;
-  font-weight: bold;
-  color: #0abab5;
 }
 <body>
