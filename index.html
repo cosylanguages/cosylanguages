@@ -11,7 +11,7 @@
   <h1>COSYlanguages</h1>
 
   <div id="selectors-container">
-
+    <!-- Rest of your existing HTML remains the same -->
     <div class="selector-group" id="language-day-selectors">
       <label for="language-select">Choose language:</label>
       <select id="language-select">
@@ -70,480 +70,555 @@
 
   <script>
     // Data sets with full phrases/statements
-  const vocabData = {
-    COSYenglish: {
-      1: ["Hello", "Goodbye", "Thank you", "You're welcome", "One coffee, please", "One tea, please", "Cash", "Card", "Wine", "Beer", "Water", "Juice", "Alright", "Sorry"],
-      2: ["Boy", "Girl", "Teacher", "Student", "Woman", "Man", "Person", "Thing", "What", "Who", "Nice to meet you", "For me", "Drink", "No problem"],
-      3: ["Mother", "Father", "Son", "Daughter", "Sister", "Brother", "Husband", "Wife", "Friend", ],
-      4: ["Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine"],
-      5: ["Good", "Bad", "Easy", "Difficult", "Boring", "Interesting", "Big", "Small", "Hot", "Cold", "Cheap", "Expensive"],
-      6: []
-    },
-    COSYfrançais: {
-      1: ["Bonjour", "Au revoir", "Merci", "De rien", "Un café, s'il vous plaît", "Un thé, s'il vous plaît", "Espèces", "La carte", "Le vin", "La bière", "L'eau", "Le jus", "D'accord", "Désolé.e"],
-      2: ["Le garçon", "La fille", "Le professeur", "La professeur", "L'étudiant", "L'étudiante", "La femme", "L'homme", "La personne", "La chose", "Enchanté.e", "Pour moi", "La boission", "Pas de problème"],
-      3: ["La mère", "Le père", "Le fils", "La fille", "La sœur", "Le frère", "Le mari", "La femme", "L'ami", "L'amie"],
-    },
-    COSYitaliano: {
-      1: ["Ciao", "Addio", "Grazie", "Prego", "Un caffè, per favore", "Un tè, per favore", "Contanti", "La carta", "Il vino", "La birra", "L'acqua", "Il succo", "Bene","Scusi.a"], 
-      2: ["Il ragazzo", "La ragazza", "Il professore", "La professoressa", "Lo studente", "La studentessa", "La donna", "L'uomo", "La persona", "La cosa", "Piacere", "Per me", "La bevanda", "Nessun problema"],
-      3: ["la madre", "Il padre", "Il figlio", "La figlia", "La sorella", "Fratello", "Marito", "Moglie", "Amico/a"]
-    },
-    COSYespañol: {
-     
-    },
-    COSYportuguês: {
-      
-    },
-    COSYdeutsch: {
-      
-    },
-    ΚΟΖΥελληνικά: {
-      1: ["Γειά", "Αντίο", "Ευχαριστώ", "Παρακαλώ", "Έναν καφέ, παρακαλώ", "Ένα τσάι, παρακαλώ", "Μετρητά", "Η κάρτα", "Το κρασί", "Η μπύρα", "Το νερό", "Ο χυμός", "Εντάξει", "Συγγνώμη"],
-      2: ["Το αγόρι", "Το κορίτσι", "Ο δάσκαλος", "Η δασκάλα", "Ο μαθητής", "Η μαθήτρια", "Η γυναίκα", "Ο άντρας", "Το άτομο", "Το πράγμα", "Χαίρω πολύ", "Για μένα", "Το ποτό", "Κανένα πρόβλημα"],
-      3: ["Μητέρα", "Πατέρας", "Γιος", "Κόρη", "Αδερφή", "Αδερφός", "Σύζυγος", "Σύζυγος", "Φίλος/Φίλη"]
-    },
-    ТАКОЙрусский: {
-      
-    },
-    ԾՈՍՅհայկական: {
+    const vocabData = {
+      COSYenglish: {
+        1: ["Hello", "Goodbye", "Thank you", "You're welcome", "One coffee, please", "One tea, please", "Cash", "Card", "Wine", "Beer", "Water", "Juice", "Alright", "Sorry"],
+        2: ["Boy", "Girl", "Teacher", "Student", "Woman", "Man", "Person", "Thing", "What", "Who", "Nice to meet you", "For me", "Drink", "No problem"],
+        3: ["Mother", "Father", "Son", "Daughter", "Sister", "Brother", "Husband", "Wife", "Friend"],
+        4: ["Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine"],
+        5: ["Good", "Bad", "Easy", "Difficult", "Boring", "Interesting", "Big", "Small", "Hot", "Cold", "Cheap", "Expensive"],
+        6: []
+      },
+      COSYfrançais: {
+        1: ["Bonjour", "Au revoir", "Merci", "De rien", "Un café, s'il vous plaît", "Un thé, s'il vous plaît", "Espèces", "La carte", "Le vin", "La bière", "L'eau", "Le jus", "D'accord", "Désolé.e"],
+        2: ["Le garçon", "La fille", "Le professeur", "La professeur", "L'étudiant", "L'étudiante", "La femme", "L'homme", "La personne", "La chose", "Enchanté.e", "Pour moi", "La boission", "Pas de problème"],
+        3: ["La mère", "Le père", "Le fils", "La fille", "La sœur", "Le frère", "Le mari", "La femme", "L'ami", "L'amie"],
+      },
+      COSYitaliano: {
+        1: ["Ciao", "Addio", "Grazie", "Prego", "Un caffè, per favore", "Un tè, per favore", "Contanti", "La carta", "Il vino", "La birra", "L'acqua", "Il succo", "Bene","Scusi.a"], 
+        2: ["Il ragazzo", "La ragazza", "Il professore", "La professoressa", "Lo studente", "La studentessa", "La donna", "L'uomo", "La persona", "La cosa", "Piacere", "Per me", "La bevanda", "Nessun problema"],
+        3: ["la madre", "Il padre", "Il figlio", "La figlia", "La sorella", "Fratello", "Marito", "Moglie", "Amico/a"]
+      },
+      COSYespañol: {
+        
+      },
+      COSYportuguês: {
+        
+      },
+      COSYdeutsch: {
+        
+      },
+      ΚΟΖΥελληνικά: {
+        1: ["Γειά", "Αντίο", "Ευχαριστώ", "Παρακαλώ", "Έναν καφέ, παρακαλώ", "Ένα τσάι, παρακαλώ", "Μετρητά", "Η κάρτα", "Το κρασί", "Η μπύρα", "Το νερό", "Ο χυμός", "Εντάξει", "Συγγνώμη"],
+        2: ["Το αγόρι", "Το κορίτσι", "Ο δάσκαλος", "Η δασκάλα", "Ο μαθητής", "Η μαθήτρια", "Η γυναίκα", "Ο άντρας", "Το άτομο", "Το πράγμα", "Χαίρω πολύ", "Για μένα", "Το ποτό", "Κανένα πρόβλημα"],
+        3: ["Μητέρα", "Πατέρας", "Γιος", "Κόρη", "Αδερφή", "Αδερφός", "Σύζυγος", "Σύζυγος", "Φίλος/Φίλη"]
+      },
+      ТАКОЙрусский: {
+        
+      },
+      ԾՈՍՅհայկական: {
 
-    }
-  };
+      }
+    };
 
-  const grammarData = {
-    COSYenglish: {    
-      2: [
-        "I",
-        "You",
-        "He",
-        "She",
-        "It",
-        "am",
-        "are",
-        "is"
-      ],
-      3: [
-        "To have (examples): I have a mother. You have a sister. He has a son.",
-        "Possessives (examples): my mother, your sister, his son, her husband."
-      ]
-    },
-    COSYfrançais: {
-      2: [
-        "Je",
-        "Tu",
-        "Il",
-        "Elle",
-        "Ce",
-        "suis",
-        "es",
-        "est"
-      ],
-      3: [
-        "Avoir (exemples) : J'ai une mère. Tu as une sœur. Il a un fils.",
-        "Possessifs (exemples) : ma mère, ta sœur, son fils, son mari."
-      ]
-    },
-    COSYitaliano: {
-      2: [
-       "Io",
-        "Tu",
-        "Lui",
-        "Lei",
-        "sono",
-        "sei",
-        "è"
-      ],
-      3: [
-        "Avere (esempi): Ho una madre. Hai una sorella. Lui ha un figlio.",
-        "Possessivi (esempi): mia madre, tua sorella, suo figlio, suo marito."
-      ]
-    },
-    COSYespañol: {
-      
-    },
-    COSYportuguês: {
-      
-    },
-    COSYdeutsch: {
-      
-    },
-    ΚΟΖΥελληνικά: {
-      2: [
-       "Εγώ",
-        "Εσύ",
-        "Αυτός",
-        "Αυτή",
-        "Αυτό",
-        "είμαι",
-        "είσαι",
-        "είναι"
-      ],
-      3: [
-        "Έχω (παραδείγματα): Έχω μια μητέρα. Έχεις μια αδερφή. Αυτός έχει έναν γιο.",
-        "Κτητικές αντωνυμίες (παραδείγματα): η μητέρα μου, η αδερφή σου, ο γιος του, ο σύζυγός της."
-      ]
-    },
-    ТАКОЙрусский: {
-      1: [
-        "Я студент.",
-        "Ты учитель.",
-        "Он врач."
-      ],
-      2: [
-        "У неё есть книга.",
-        "Мы счастливы.",
-        "Они живут в Москве."
-      ],
-      3: [
-        "Иметь (примеры): У меня есть мать. У тебя есть сестра. У него есть сын.",
-        "Притяжательные местоимения (примеры): моя мать, твоя сестра, его сын, её муж."
-      ]
-    },
-     ԾՈՍՅհայկական: {
+    const grammarData = {
+      COSYenglish: {    
+        2: [
+          "I",
+          "You",
+          "He",
+          "She",
+          "It",
+          "am",
+          "are",
+          "is"
+        ],
+        3: [
+          "To have (examples): I have a mother. You have a sister. He has a son.",
+          "Possessives (examples): my mother, your sister, his son, her husband."
+        ]
+      },
+      COSYfrançais: {
+        2: [
+          "Je",
+          "Tu",
+          "Il",
+          "Elle",
+          "Ce",
+          "suis",
+          "es",
+          "est"
+        ],
+        3: [
+          "Avoir (exemples) : J'ai une mère. Tu as une sœur. Il a un fils.",
+          "Possessifs (exemples) : ma mère, ta sœur, son fils, son mari."
+        ]
+      },
+      COSYitaliano: {
+        2: [
+         "Io",
+          "Tu",
+          "Lui",
+          "Lei",
+          "sono",
+          "sei",
+          "è"
+        ],
+        3: [
+          "Avere (esempi): Ho una madre. Hai una sorella. Lui ha un figlio.",
+          "Possessivi (esempi): mia madre, tua sorella, suo figlio, suo marito."
+        ]
+      },
+      COSYespañol: {
+        
+      },
+      COSYportuguês: {
+        
+      },
+      COSYdeutsch: {
+        
+      },
+      ΚΟΖΥελληνικά: {
+        2: [
+         "Εγώ",
+          "Εσύ",
+          "Αυτός",
+          "Αυτή",
+          "Αυτό",
+          "είμαι",
+          "είσαι",
+          "είναι"
+        ],
+        3: [
+          "Έχω (παραδείγματα): Έχω μια μητέρα. Έχεις μια αδερφή. Αυτός έχει έναν γιο.",
+          "Κτητικές αντωνυμίες (παραδείγματα): η μητέρα μου, η αδερφή σου, ο γιος του, ο σύζυγός της."
+        ]
+      },
+      ТАКОЙрусский: {
+        1: [
+          "Я студент.",
+          "Ты учитель.",
+          "Он врач."
+        ],
+        2: [
+          "У неё есть книга.",
+          "Мы счастливы.",
+          "Они живут в Москве."
+        ],
+        3: [
+          "Иметь (примеры): У меня есть мать. У тебя есть сестра. У него есть сын.",
+          "Притяжательные местоимения (примеры): моя мать, твоя сестра, его сын, её муж."
+        ]
+      },
+       ԾՈՍՅհայկական: {
 
-    }
-  };
+      }
+    };
 
-  const speakingData = {
-    COSYenglish: {
-      1: [
-        "How are you today?",
-        "What's your name?",
-        "Where do you live?"
-      ],
-      2: [
-        "Talk about your daily routine.",
-        "Describe your favorite food.",
-        "Tell me about your job."
-      ],
-      3: [
-        "My family, my friend and his/her family, drinks you have."
-      ]
-    },
-    COSYfrançais: {
-      1: [
-        "Comment ça va aujourd'hui?",
-        "Comment tu t'appelles?",
-        "Où habites-tu?"
-      ],
-      2: [
-        "Parle de ta routine quotidienne.",
-        "Décris ton plat préféré.",
-        "Parle-moi de ton travail."
-      ],
-      3: [
-        "Ma famille, mon ami et sa famille, les boissons que tu prends."
-      ]
-    },
-    COSYitaliano: {
-      1: [
-        "Come stai oggi?",
-        "Come ti chiami?",
-        "Dove vivi?"
-      ],
-      2: [
-        "Parla della tua routine quotidiana.",
-        "Descrivi il tuo cibo preferito.",
-        "Parlami del tuo lavoro."
-      ],
-      3: [
-        "La mia famiglia, il mio amico e la sua famiglia, le bevande che prendi."
-      ]
-    },
-    COSYespañol: {
-      1: [
-        "¿Cómo estás hoy?",
-        "¿Cómo te llamas?",
-        "¿Dónde vives?"
-      ],
-      2: [
-        "Habla sobre tu rutina diaria.",
-        "Describe tu comida favorita.",
-        "Cuéntame sobre tu trabajo."
-      ],
-      3: [
-        "Mi familia, mi amigo y su familia, las bebidas que tomas."
-      ]
-    },
-    COSYportuguês: {
-      1: [
-        "Como você está hoje?",
-        "Qual é o seu nome?",
-        "Onde você mora?"
-      ],
-      2: [
-        "Fale sobre sua rotina diária.",
-        "Descreva sua comida favorita.",
-        "Conte-me sobre seu trabalho."
-      ],
-      3: [
-        "Minha família, meu amigo e sua família, as bebidas que você toma."
-      ]
-    },
-    COSYdeutsch: {
-      1: [
-        "Wie geht es dir heute?",
-        "Wie heißt du?",
-        "Wo wohnst du?"
-      ],
-      2: [
-        "Erzähle von deinem Tagesablauf.",
-        "Beschreibe dein Lieblingsessen.",
-        "Erzähl mir von deinem Job."
-      ],
-      3: [
-        "Meine Familie, mein Freund und seine Familie, die Getränke, die du hast."
-      ]
-    },
-    COSYελληνικά: {
-      1: [
-        "Πώς είσαι σήμερα;",
-        "Πώς σε λένε;",
-        "Πού μένεις;"
-      ],
-      2: [
-        "Μίλα για την καθημερινή σου ρουτίνα.",
-        "Περιέγραψε το αγαπημένο σου φαγητό.",
-        "Πες μου για τη δουλειά σου."
-      ],
-      3: [
-        "Η οικογένειά μου, ο φίλος μου και η οικογένειά του/της, τα ποτά που πίνεις."
-      ]
-    },
-    COSYрусский: {
-      1: [
-        "Как ты сегодня?",
-        "Как тебя зовут?",
-        "Где ты живёшь?"
-      ],
-      2: [
-        "Расскажи о своей повседневной жизни.",
-        "Опиши свою любимую еду.",
-        "Расскажи мне о своей работе."
-      ],
-      3: [
-        "Моя семья, мой друг и его/её семья, напитки, которые ты пьёшь."
-      ]
-    },
-     ԾՈՍՅհայկական: {
+    const speakingData = {
+      COSYenglish: {
+        1: [
+          "How are you today?",
+          "What's your name?",
+          "Where do you live?"
+        ],
+        2: [
+          "Talk about your daily routine.",
+          "Describe your favorite food.",
+          "Tell me about your job."
+        ],
+        3: [
+          "My family, my friend and his/her family, drinks you have."
+        ]
+      },
+      COSYfrançais: {
+        1: [
+          "Comment ça va aujourd'hui?",
+          "Comment tu t'appelles?",
+          "Où habites-tu?"
+        ],
+        2: [
+          "Parle de ta routine quotidienne.",
+          "Décris ton plat préféré.",
+          "Parle-moi de ton travail."
+        ],
+        3: [
+          "Ma famille, mon ami et sa famille, les boissons que tu prends."
+        ]
+      },
+      COSYitaliano: {
+        1: [
+          "Come stai oggi?",
+          "Come ti chiami?",
+          "Dove vivi?"
+        ],
+        2: [
+          "Parla della tua routine quotidiana.",
+          "Descrivi il tuo cibo preferito.",
+          "Parlami del tuo lavoro."
+        ],
+        3: [
+          "La mia famiglia, il mio amico e la sua famiglia, le bevande che prendi."
+        ]
+      },
+      COSYespañol: {
+        1: [
+          "¿Cómo estás hoy?",
+          "¿Cómo te llamas?",
+          "¿Dónde vives?"
+        ],
+        2: [
+          "Habla sobre tu rutina diaria.",
+          "Describe tu comida favorita.",
+          "Cuéntame sobre tu trabajo."
+        ],
+        3: [
+          "Mi familia, mi amigo y su familia, las bebidas que tomas."
+        ]
+      },
+      COSYportuguês: {
+        1: [
+          "Como você está hoje?",
+          "Qual é o seu nome?",
+          "Onde você mora?"
+        ],
+        2: [
+          "Fale sobre sua rotina diária.",
+          "Descreva sua comida favorita.",
+          "Conte-me sobre seu trabalho."
+        ],
+        3: [
+          "Minha família, meu amigo e sua família, as bebidas que você toma."
+        ]
+      },
+      COSYdeutsch: {
+        1: [
+          "Wie geht es dir heute?",
+          "Wie heißt du?",
+          "Wo wohnst du?"
+        ],
+        2: [
+          "Erzähle von deinem Tagesablauf.",
+          "Beschreibe dein Lieblingsessen.",
+          "Erzähl mir von deinem Job."
+        ],
+        3: [
+          "Meine Familie, mein Freund und seine Familie, die Getränke, die du hast."
+        ]
+      },
+      ΚΟΖΥελληνικά: {
+        1: [
+          "Πώς είσαι σήμερα;",
+          "Πώς σε λένε;",
+          "Πού μένεις;"
+        ],
+        2: [
+          "Μίλα για την καθημερινή σου ρουτίνα.",
+          "Περιέγραψε το αγαπημένο σου φαγητό.",
+          "Πες μου για τη δουλειά σου."
+        ],
+        3: [
+          "Η οικογένειά μου, ο φίλος μου και η οικογένειά του/της, τα ποτά που πίνεις."
+        ]
+      },
+      ТАКОЙрусский: {
+        1: [
+          "Как ты сегодня?",
+          "Как тебя зовут?",
+          "Где ты живёшь?"
+        ],
+        2: [
+          "Расскажи о своей повседневной жизни.",
+          "Опиши свою любимую еду.",
+          "Расскажи мне о своей работе."
+        ],
+        3: [
+          "Моя семья, мой друг и его/её семья, напитки, которые ты пьёшь."
+        ]
+      },
+       ԾՈՍՅհայկական: {
 
-    }
-  };
+      }
+    };
 
-  // Images per language/day with alt text (examples)
-  const imageData = {
-    allLanguages: {
-      1: [
+    // 1. UNIFIED IMAGE DATA - same images for all languages
+    const imageData = {
+      allLanguages: {
+        1: [
           { src: "https://knowt-user-attachments.s3.amazonaws.com/d1b268c8-b4a8-448f-b332-5f8b25d5e673.jpg", alt: "Greeting image", 
             translations: {
-              COSYenglish: "Hello",
-              COSYfrançais: "Bonjour",
-              COSYitaliano: "Buongiorno",
-              COSYespañol: "",
-              COSYportuguês: "",
-              COSYdeutsch: "",
+              COSYenglish: "Greeting image",
+              COSYfrançais: "Image de salutation",
+              COSYitaliano: "Immagine di saluto",
+              COSYespañol: "Imagen de saludo",
+              COSYportuguês: "Imagem de saudação",
+              COSYdeutsch: "Begrüßungsbild",
               ΚΟΖΥελληνικά: "Εικόνα χαιρετισμού",
-              ТАКОЙрусский: "Γεια σου",
-              ԾՈՍՅհայկական: ""
+              ТАКОЙрусский: "Изображение приветствия",
+              ԾՈՍՅհայկական: "Ողջույնի պատկեր"
+            }
+          }
+        ],
+        2: [
+          { src: "https://i.imgur.com/6oXTFPa.jpg", alt: "Boy and girl",
+            translations: {
+              COSYenglish: "Boy and girl",
+              COSYfrançais: "Garçon et fille",
+              COSYitaliano: "Ragazzo e ragazza",
+              COSYespañol: "Niño y niña",
+              COSYportuguês: "Menino e menina",
+              COSYdeutsch: "Junge und Mädchen",
+              ΚΟΖΥελληνικά: "Αγόρι και κορίτσι",
+              ТАКОЙрусский: "Мальчик и девочка",
+              ԾՈՍՅհայկական: "Տղա և աղջիկ"
+            }
+          }
+        ],
+        3: [
+          { src: "https://i.imgur.com/m4wKJ8f.jpg", alt: "Mother and son",
+            translations: {
+              COSYenglish: "Mother and son",
+              COSYfrançais: "Mère et fils",
+              COSYitaliano: "Madre e figlio",
+              COSYespañol: "Madre e hijo",
+              COSYportuguês: "Mãe e filho",
+              COSYdeutsch: "Mutter und Sohn",
+              ΚΟΖΥελληνικά: "Μητέρα και γιος",
+              ТАКОЙрусский: "Мать и сын",
+              ԾՈՍՅհայկական: "Մայր և որդի"
+            }
+          },
+          { src: "https://i.imgur.com/oV9fN3L.jpg", alt: "Family photo",
+            translations: {
+              COSYenglish: "Family photo",
+              COSYfrançais: "Photo de famille",
+              COSYitaliano: "Foto di famiglia",
+              COSYespañol: "Foto familiar",
+              COSYportuguês: "Foto de família",
+              COSYdeutsch: "Familienfoto",
+              ΚΟΖΥελληνικά: "Οικογενειακή φωτογραφία",
+              ТАКОЙрусский: "Семейное фото",
+              ԾՈՍՅհայկական: "Ընտանեկան լուսանկար"
             }
           }
         ]
-        };
-
-  // Voice mappings per language for speechSynthesis
-  // Note: Voice availability depends on browser and OS
-  // You can customize or extend as needed
-  const voiceLanguageMap = {
-    COSYenglish: "en-US",
-    COSYfrançais: "fr-FR",
-    COSYitaliano: "it-IT",
-    COSYespañol: "es-ES",
-    COSYportuguês: "pt-PT",
-    COSYdeutsch: "de-DE",
-    COSYελληνικά: "el-GR",
-    COSYрусский: "ru-RU",
-    ԾՈՍՅհայկական: "hy-AM"
-  };
-
-  // Select DOM elements
-  const languageSelect = document.getElementById("language-select");
-  const daySelect = document.getElementById("day-select");
-  const dayFromSelect = document.getElementById("day-from-select");
-  const dayToSelect = document.getElementById("day-to-select");
-  const practiceTypeSelect = document.getElementById("practice-type-select");
-  const showButton = document.getElementById("show-button");
-  const resultContainer = document.getElementById("result-container");
-
-  // Utility function to get voices and pick voice by lang prefix
-  function getVoiceByLang(langPrefix) {
-    const voices = window.speechSynthesis.getVoices();
-    // Some browsers return empty voices on first call - handle by retrying
-    if (!voices.length) {
-      return null;
-    }
-    // Find a voice whose lang starts with langPrefix
-    for (let voice of voices) {
-      if (voice.lang.toLowerCase().startsWith(langPrefix.toLowerCase())) {
-        return voice;
       }
-    }
-    // If none found, return first voice as fallback
-    return voices[0] || null;
-  }
-
-  // Function to speak text with selected voice and language
-  function speakText(text, languageCode) {
-    if (!window.speechSynthesis) return;
-
-    const utterance = new SpeechSynthesisUtterance(text);
-
-    const voice = getVoiceByLang(voiceLanguageMap[languageCode] || "en-US");
-    if (voice) {
-      utterance.voice = voice;
-    }
-
-    window.speechSynthesis.cancel(); // Cancel any ongoing speech
-    window.speechSynthesis.speak(utterance);
-  }
-
-  // Validate range input: dayFrom <= dayTo
-  function validDayRange(from, to) {
-    if (!from || !to) return false;
-    return Number(from) <= Number(to);
-  }
-
-  // Function to get random element from array
-  function randomElement(arr) {
-    return arr[Math.floor(Math.random() * arr.length)];
-  }
-
-  // Main function to handle the "Show" button click
-  showButton.addEventListener("click", () => {
-    const language = languageSelect.value;
-    const day = daySelect.value;
-    const dayFrom = dayFromSelect.value;
-    const dayTo = dayToSelect.value;
-    const practiceType = practiceTypeSelect.value;
-
-    // Clear previous result
-    resultContainer.innerHTML = "";
-
-    // Validation
-    if (!language) {
-      alert("Please select a language.");
-      return;
-    }
-    if (!practiceType) {
-      alert("Please select a type of practice.");
-      return;
-    }
-    // Check that either day is selected OR a valid range is selected
-    if (!day && !(dayFrom && dayTo && validDayRange(dayFrom, dayTo))) {
-      alert("Please select either a day or a valid day range (from <= to).");
-      return;
-    }
-
-    // Determine day(s) to select from
-    let daysToUse = [];
-    if (day) {
-      daysToUse = [Number(day)];
-    } else if (dayFrom && dayTo && validDayRange(dayFrom, dayTo)) {
-      for (let d = Number(dayFrom); d <= Number(dayTo); d++) {
-        daysToUse.push(d);
-      }
-    }
-
-    // Depending on practiceType, get the random content
-    switch (practiceType) {
-      case "random_word":
-        {
-          // Random word from selected day(s)
-          let combinedWords = [];
-          for (const d of daysToUse) {
-            if (vocabData[language][d]) combinedWords = combinedWords.concat(vocabData[language][d]);
-          }
-          if (combinedWords.length === 0) {
-            resultContainer.textContent = "No words found for this selection.";
-            break;
-          }
-          const word = randomElement(combinedWords);
-          resultContainer.textContent = word;
-          speakText(word, language);
-        }
-        break;
-
-      case "random_grammar":
-        {
-          // Random grammar statement from selected day(s)
-          let combinedGrammar = [];
-          for (const d of daysToUse) {
-            if (grammarData[language][d]) combinedGrammar = combinedGrammar.concat(grammarData[language][d]);
-          }
-          if (combinedGrammar.length === 0) {
-            resultContainer.textContent = "No grammar data found for this selection.";
-            break;
-          }
-          // Show only one random grammar statement
-          const grammar = randomElement(combinedGrammar);
-          resultContainer.textContent = grammar;
-          speakText(grammar, language);
-        }
-        break;
-
-      case "random_speaking":
-        {
-          // Random speaking phrase from selected day(s)
-          let combinedSpeaking = [];
-          for (const d of daysToUse) {
-            if (speakingData[language][d]) combinedSpeaking = combinedSpeaking.concat(speakingData[language][d]);
-          }
-          if (combinedSpeaking.length === 0) {
-            resultContainer.textContent = "No speaking data found for this selection.";
-            break;
-          }
-          const phrase = randomElement(combinedSpeaking);
-          resultContainer.textContent = phrase;
-          speakText(phrase, language);
-        }
-        break;
-
-      case "random_image":
-        {
-          // Random image from selected day(s)
-          let combinedImages = [];
-          for (const d of daysToUse) {
-            if (imageData[language] && imageData[language][d]) combinedImages = combinedImages.concat(imageData[language][d]);
-          }
-          if (combinedImages.length === 0) {
-            resultContainer.textContent = "No images found for this selection.";
-            break;
-          }
-          const imgObj = randomElement(combinedImages);
-          const imgElem = document.createElement("img");
-          imgElem.src = imgObj.src;
-          imgElem.alt = imgObj.alt || "Image";
-          resultContainer.appendChild(imgElem);
-          // Optional: Speak alt text or description if available
-          if (imgObj.alt) {
-            speakText(imgObj.alt, language);
-          }
-        }
-        break;
-
-      default:
-        resultContainer.textContent = "Invalid practice type selected.";
-    }
-  });
-
-  // Load voices asynchronously - workaround for some browsers
-  if (typeof speechSynthesis !== "undefined") {
-    speechSynthesis.onvoiceschanged = () => {
-      // Preload voices
-      window.speechSynthesis.getVoices();
     };
-  }
-</script>
+
+    // 2. IMPROVED VOICE HANDLING
+    const voiceLanguageMap = {
+      COSYenglish: { lang: "en-US", voiceURI: "Google US English" },
+      COSYfrançais: { lang: "fr-FR", voiceURI: "Google français" },
+      COSYitaliano: { lang: "it-IT", voiceURI: "Google italiano" },
+      COSYespañol: { lang: "es-ES", voiceURI: "Google español" },
+      COSYportuguês: { lang: "pt-PT", voiceURI: "Google português" },
+      COSYdeutsch: { lang: "de-DE", voiceURI: "Google Deutsch" },
+      ΚΟΖΥελληνικά: { lang: "el-GR", voiceURI: "Google ελληνικά" },
+      ТАКОЙрусский: { lang: "ru-RU", voiceURI: "Google русский" },
+      ԾՈՍՅհայկական: { lang: "hy-AM", voiceURI: "" }
+    };
+
+    // Function to get the best available voice
+    function getBestVoice(languageCode, voiceURI) {
+      const voices = window.speechSynthesis.getVoices();
+      
+      // First try to find exact match by voiceURI
+      if (voiceURI) {
+        const exactVoice = voices.find(v => v.voiceURI === voiceURI);
+        if (exactVoice) return exactVoice;
+      }
+      
+      // Then try to find by language
+      const langVoices = voices.filter(v => v.lang === languageCode);
+      if (langVoices.length > 0) {
+        // Prefer voices with localService (usually higher quality)
+        const localServiceVoice = langVoices.find(v => v.localService);
+        if (localServiceVoice) return localServiceVoice;
+        
+        // Return the first available voice for the language
+        return langVoices[0];
+      }
+      
+      // Fallback to any available voice
+      return voices[0] || null;
+    }
+
+    // Function to speak text with selected voice and language
+    function speakText(text, language) {
+      if (!window.speechSynthesis) {
+        console.warn("Speech synthesis not supported");
+        return;
+      }
+
+      // Cancel any ongoing speech
+      window.speechSynthesis.cancel();
+
+      // Create a new utterance
+      const utterance = new SpeechSynthesisUtterance(text);
+      
+      // Get voice settings for the language
+      const voiceSettings = voiceLanguageMap[language] || voiceLanguageMap.COSYenglish;
+      
+      // Try to get the best voice available
+      const voice = getBestVoice(voiceSettings.lang, voiceSettings.voiceURI);
+      
+      if (voice) {
+        utterance.voice = voice;
+        utterance.lang = voice.lang;
+        
+        // Adjust speech rate and pitch for more natural sound
+        utterance.rate = 0.9; // Slightly slower than default
+        utterance.pitch = 1.0; // Normal pitch
+      }
+
+      // Speak the text
+      window.speechSynthesis.speak(utterance);
+    }
+
+    // Select DOM elements
+    const languageSelect = document.getElementById("language-select");
+    const daySelect = document.getElementById("day-select");
+    const dayFromSelect = document.getElementById("day-from-select");
+    const dayToSelect = document.getElementById("day-to-select");
+    const practiceTypeSelect = document.getElementById("practice-type-select");
+    const showButton = document.getElementById("show-button");
+    const resultContainer = document.getElementById("result-container");
+
+    // Validate range input: dayFrom <= dayTo
+    function validDayRange(from, to) {
+      if (!from || !to) return false;
+      return Number(from) <= Number(to);
+    }
+
+    // Function to get random element from array
+    function randomElement(arr) {
+      return arr[Math.floor(Math.random() * arr.length)];
+    }
+
+    // Main function to handle the "Show" button click
+    showButton.addEventListener("click", () => {
+      const language = languageSelect.value;
+      const day = daySelect.value;
+      const dayFrom = dayFromSelect.value;
+      const dayTo = dayToSelect.value;
+      const practiceType = practiceTypeSelect.value;
+
+      // Clear previous result
+      resultContainer.innerHTML = "";
+
+      // Validation
+      if (!language) {
+        alert("Please select a language.");
+        return;
+      }
+      if (!practiceType) {
+        alert("Please select a type of practice.");
+        return;
+      }
+      // Check that either day is selected OR a valid range is selected
+      if (!day && !(dayFrom && dayTo && validDayRange(dayFrom, dayTo))) {
+        alert("Please select either a day or a valid day range (from <= to).");
+        return;
+      }
+
+      // Determine day(s) to select from
+      let daysToUse = [];
+      if (day) {
+        daysToUse = [Number(day)];
+      } else if (dayFrom && dayTo && validDayRange(dayFrom, dayTo)) {
+        for (let d = Number(dayFrom); d <= Number(dayTo); d++) {
+          daysToUse.push(d);
+        }
+      }
+
+      // Depending on practiceType, get the random content
+      switch (practiceType) {
+        case "random_word":
+          {
+            // Random word from selected day(s)
+            let combinedWords = [];
+            for (const d of daysToUse) {
+              if (vocabData[language][d]) combinedWords = combinedWords.concat(vocabData[language][d]);
+            }
+            if (combinedWords.length === 0) {
+              resultContainer.textContent = "No words found for this selection.";
+              break;
+            }
+            const word = randomElement(combinedWords);
+            resultContainer.textContent = word;
+            speakText(word, language);
+          }
+          break;
+
+        case "random_grammar":
+          {
+            // Random grammar statement from selected day(s)
+            let combinedGrammar = [];
+            for (const d of daysToUse) {
+              if (grammarData[language][d]) combinedGrammar = combinedGrammar.concat(grammarData[language][d]);
+            }
+            if (combinedGrammar.length === 0) {
+              resultContainer.textContent = "No grammar data found for this selection.";
+              break;
+            }
+            // Show only one random grammar statement
+            const grammar = randomElement(combinedGrammar);
+            resultContainer.textContent = grammar;
+            speakText(grammar, language);
+          }
+          break;
+
+        case "random_speaking":
+          {
+            // Random speaking phrase from selected day(s)
+            let combinedSpeaking = [];
+            for (const d of daysToUse) {
+              if (speakingData[language][d]) combinedSpeaking = combinedSpeaking.concat(speakingData[language][d]);
+            }
+            if (combinedSpeaking.length === 0) {
+              resultContainer.textContent = "No speaking data found for this selection.";
+              break;
+            }
+            const phrase = randomElement(combinedSpeaking);
+            resultContainer.textContent = phrase;
+            speakText(phrase, language);
+          }
+          break;
+
+        case "random_image":
+          {
+            // Random image from selected day(s)
+            let combinedImages = [];
+            for (const d of daysToUse) {
+              if (imageData.allLanguages[d]) {
+                combinedImages = combinedImages.concat(imageData.allLanguages[d]);
+              }
+            }
+            if (combinedImages.length === 0) {
+              resultContainer.textContent = "No images found for this selection.";
+              break;
+            }
+            const imgObj = randomElement(combinedImages);
+            const imgElem = document.createElement("img");
+            imgElem.src = imgObj.src;
+            
+            // Use translated alt text if available
+            const altText = imgObj.translations?.[language] || imgObj.alt || "Image";
+            imgElem.alt = altText;
+            
+            resultContainer.appendChild(imgElem);
+            
+            // Speak the translated alt text
+            speakText(altText, language);
+          }
+          break;
+
+        default:
+          resultContainer.textContent = "Invalid practice type selected.";
+      }
+    });
+
+    // Load voices asynchronously - workaround for some browsers
+    if (typeof speechSynthesis !== "undefined") {
+      // Some browsers need this to populate voices
+      speechSynthesis.onvoiceschanged = () => {
+        console.log("Voices changed, available voices:", window.speechSynthesis.getVoices());
+      };
+      
+      // Try to preload voices
+      window.speechSynthesis.getVoices();
+    }
+  </script>
 
 </body>
 </html>
