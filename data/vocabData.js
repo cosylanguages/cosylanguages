@@ -19,7 +19,7 @@
       COSYitaliano: {
         1: ["Buongiorno", "Arrivederci", "Sì", "No", "Grazie", "Prego"], 
         2: ["Il ragazzo", "La ragazza", "Il professore", "La professoressa", "Lo studente", "La studentessa", "La donna", "L'uomo", "La persona", "La cosa", "Piacere", "Per me", "La bevanda", "Nessun problema"],
-        3: ["la madre", "Il padre", "Il figlio", "La figlia", "La sorella", "Fratello", "Marito", "Moglie", "Amico/a"]
+        3: ["la madre", "Il padre", "Il figlio", "La figlia", "La sorella", "Il fratello", "Il marito", "La moglie", "L'amico", "L'amica"]
       },
       COSYespañol: {
         1: ["Hola", "Adiós", "Sí", "No", "Gracias", "De nada"],
@@ -39,7 +39,7 @@
         3: ["Μητέρα", "Πατέρας", "Γιος", "Κόρη", "Αδερφή", "Αδερφός", "Σύζυγος", "Σύζυγος", "Φίλος/Φίλη"]
       },
       ТАКОЙрусский: {
-        1: ["Привет", "До свидания", "Да", "Нет", "Спасибо", "Пожалуйста"],
+        1: ["Привет", "Пока", "Да", "Нет", "Спасибо", "Пожалуйста"],
         2: ["Мальчик", "Девочка", "Учитель", "Учительница", "Студент", "Студентка", "Женщина", "Мужчина"]
       },
       ԾՈՍՅհայկական: {
