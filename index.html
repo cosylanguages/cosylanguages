@@ -921,16 +921,50 @@
 
         case "random_grammar":
           {
-            // Random grammar statement from selected day(s)
             let combinedGrammar = [];
             for (const d of daysToUse) {
-              if (grammarData[language][d]) combinedGrammar = combinedGrammar.concat(grammarData[language][d]);
+              if (grammarData[language][d]) {
+                if (d === 3) {
+                  // For day 3, show options to choose grammar type
+                  const optionsDiv = document.createElement("div");
+                  optionsDiv.className = "grammar-options";
+                  optionsDiv.innerHTML = "<p>Choose grammar practice for Day 3:</p>";
+                  
+                  const toHaveOption = document.createElement("div");
+                  toHaveOption.className = "grammar-option";
+                  toHaveOption.textContent = "To Have";
+                  toHaveOption.addEventListener("click", () => {
+                    const grammar = randomElement(grammarData[language][d].to_have);
+                    resultContainer.innerHTML = "";
+                    resultContainer.appendChild(document.createTextNode(grammar));
+                    speakText(grammar, language);
+                  });
+                  
+                  const possessivesOption = document.createElement("div");
+                  possessivesOption.className = "grammar-option";
+                  possessivesOption.textContent = "Possessive Adjectives";
+                  possessivesOption.addEventListener("click", () => {
+                    const grammar = randomElement(grammarData[language][d].possessives);
+                    resultContainer.innerHTML = "";
+                    resultContainer.appendChild(document.createTextNode(grammar));
+                    speakText(grammar, language);
+                  });
+                  
+                  optionsDiv.appendChild(toHaveOption);
+                  optionsDiv.appendChild(possessivesOption);
+                  resultContainer.appendChild(optionsDiv);
+                  return;
+                } else {
+                  combinedGrammar = combinedGrammar.concat(grammarData[language][d]);
+                }
+              }
             }
+            
             if (combinedGrammar.length === 0) {
               resultContainer.textContent = "No grammar data found for this selection.";
               break;
             }
-            // Show only one random grammar statement
+            
             const grammar = randomElement(combinedGrammar);
             resultContainer.textContent = grammar;
             speakText(grammar, language);
@@ -973,6 +1007,16 @@
             const container = document.createElement("div");
             container.className = "image-container";
             
+            // Create question based on day
+            const questionDiv = document.createElement("div");
+            questionDiv.className = "image-question";
+            
+            if (daysToUse.includes(1)) {
+              questionDiv.textContent = "What is it?";
+            } else {
+              questionDiv.innerHTML = "Who is it?<br>What is it?";
+            }
+            
             // Create image element
             const imgElem = document.createElement("img");
             imgElem.src = imgObj.src;
@@ -996,13 +1040,12 @@
             caption.style.display = "none";
             
             // Add elements to container
+            container.appendChild(questionDiv);
             container.appendChild(imgElem);
             container.appendChild(caption);
             
             // Add container to result
             resultContainer.appendChild(container);
-            
-            // Note: Removed the automatic speaking of the alt text
           }
           break;
 
