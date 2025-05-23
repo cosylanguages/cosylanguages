@@ -252,8 +252,7 @@
 
     const grammarData = {
       COSYenglish: {    
-        2: {
-          To_be: [
+        2: [
           "I",
           "You",
           "He",
@@ -263,9 +262,8 @@
           "are",
           "is"
         ],
-          },
         3: {
-          To_have: [
+          to_have: [
             "I",
             "You",
             "He",
@@ -274,7 +272,7 @@
             "have",
             "has"
           ],
-          Possessives: [
+          possessives: [
             "Possessives (examples): my mother, your sister, his son, her husband."
           ]
         }
@@ -289,10 +287,9 @@
           "Jus",
           "Caffé",
           "Thé"
-          ]
+            ]
             },
-        2: {
-        Être: [
+        2: [
           "Je",
           "Tu",
           "Il",
@@ -301,10 +298,9 @@
           "suis",
           "es",
           "est"
-        ]
-          },
+        ],
         3: {
-          Avoir: [
+          to_have: [
             "J'",
             "Tu",
             "Il",
@@ -313,30 +309,14 @@
             "ai",
             "as",
             "a"
-            ]
-          },
-          Possessifs: [
-            "Ma mère", 
-            "Ta sœur", 
-            "Son fils", 
-            "Son mari"
+          ],
+          possessives: [
+            "Possessifs (exemples) : ma mère, ta sœur, son fils, son mari."
           ]
         }
       },
       COSYitaliano: {
-       1: {
-          Genere: [
-          "Acqua",
-          "Vino",
-          "Carta",
-          "Birra",
-          "Succo",
-          "Caffè",
-          "Tè"
-          ]
-         },
-        2: {
-         Essere: [
+        2: [
          "Io",
           "Tu",
           "Lui",
@@ -344,10 +324,9 @@
           "sono",
           "sei",
           "è"
-        ]
-          },
+        ],
         3: {
-          Avere: [
+          to_have: [
             "Io",
             "Tu",
             "Lui",
@@ -362,28 +341,85 @@
         }
       },
       COSYespañol: {
-        
+        2: [
+          "Yo",
+          "Tú",
+          "Él",
+          "Ella",
+          "Es",
+          "soy",
+          "eres",
+          "es"
+        ],
+        3: {
+          to_have: [
+            "Yo",
+            "Tú",
+            "Él",
+            "Ella",
+            "tengo",
+            "tienes",
+            "tiene"
+          ],
+          possessives: [
+            "Posesivos (ejemplos): mi madre, tu hermana, su hijo, su marido."
+          ]
+        }
       },
       COSYportuguês: {
-        
+        2: [
+          "Eu",
+          "Tu",
+          "Ele",
+          "Ela",
+          "sou",
+          "és",
+          "é"
+        ],
+        3: {
+          to_have: [
+            "Eu",
+            "Tu",
+            "Ele",
+            "Ela",
+            "tenho",
+            "tens",
+            "tem"
+          ],
+          possessives: [
+            "Possessivos (exemplos): minha mãe, tua irmã, seu filho, seu marido."
+          ]
+        }
       },
       COSYdeutsch: {
-        
+        2: [
+          "Ich",
+          "Du",
+          "Er",
+          "Sie",
+          "Es",
+          "bin",
+          "bist",
+          "ist"
+        ],
+        3: {
+          to_have: [
+            "Ich",
+            "Du",
+            "Er",
+            "Sie",
+            "Es",
+            "habe",
+            "hast",
+            "hat"
+          ],
+          possessives: [
+            "Possessivartikel (Beispiele): meine Mutter, deine Schwester, sein Sohn, ihr Mann."
+          ]
+        }
       },
       ΚΟΖΥελληνικά: {
-        1: {
-          Γένος: [
-          "Νερό",
-          "Κρασί",
-          "Χάρτης",
-          "Μπύρα",
-          "Χυμός",
-          "Caffé",
-          "Τσάι"
-          ]
-         },
-        2: {
-          Είναι: [
+        2: [
          "Εγώ",
           "Εσύ",
           "Αυτός",
@@ -394,7 +430,7 @@
           "είναι"
         ],
         3: {
-          Έχω: [
+          to_have: [
             "Εγώ",
             "Εσύ",
             "Αυτός",
@@ -404,16 +440,62 @@
             "έχεις",
             "έχει"
           ],
-          Κτητικές_αντωνυμίες: [
+          possessives: [
             "Κτητικές αντωνυμίες (παραδείγματα): η μητέρα μου, η αδερφή σου, ο γιος του, ο σύζυγός της."
           ]
         }
       },
       ТАКОЙрусский: {
-        
+        2: [
+          "Я",
+          "Ты",
+          "Он",
+          "Она",
+          "Оно",
+          "есть",
+          "есть",
+          "есть"
+        ],
+        3: {
+          to_have: [
+            "У меня",
+            "У тебя",
+            "У него",
+            "У неё",
+            "есть",
+            "есть",
+            "есть"
+          ],
+          possessives: [
+            "Притяжательные прилагательные (примеры): моя мать, твоя сестра, его сын, её муж."
+          ]
+        }
       },
        ԾՈՍՅհայկական: {
-
+        2: [
+          "Ես",
+          "Դու",
+          "Նա",
+          "Նա",
+          "Այն",
+          "եմ",
+          "ես",
+          "է"
+        ],
+        3: {
+          to_have: [
+            "Ես",
+            "Դու",
+            "Նա",
+            "Նա",
+            "ունեմ",
+            "ունես",
+            "ունի"
+          ],
+          possessives: [
+            "Ստացական ածականներ (օրինակներ). իմ մայրը, քո քույրը, նրա որդին, նրա ամուսինը:"
+          ]
+        }
       }
     };
 
@@ -467,13 +549,43 @@
         ]
       },
       COSYespañol: {
-      
+        1: [ 
+          "¿Café o té? ¿Efectivo o tarjeta?"
+        ],
+        2: [
+          "¿Quién eres? (nombre, hombre o mujer, estudiante o profesor?)",
+          "Nombra 3 personas populares (nombre, hombre o mujer?)",
+          "Nombra 3 personas (nombre, hombre o mujer?)"
+        ],
+        3: [
+          "Tu familia, tu amigo/a y su familia, las bebidas que tomas."
+        ]
       },
       COSYportuguês: {
-        
+        1: [ 
+          "Café ou chá? Dinheiro ou cartão?"
+        ],
+        2: [
+          "Quem és tu? (nome, homem ou mulher, estudante ou professor?)",
+          "Nomeia 3 pessoas populares (nome, homem ou mulher?)",
+          "Nomeia 3 pessoas (nome, homem ou mulher?)"
+        ],
+        3: [
+          "A tua família, o teu amigo/a e a sua família, as bebidas que tomas."
+        ]
       },
       COSYdeutsch: {
-        
+        1: [ 
+          "Kaffee oder Tee? Bargeld oder Karte?"
+        ],
+        2: [
+          "Wer bist du? (Name, Mann oder Frau, Student oder Lehrer?)",
+          "Nenne 3 bekannte Personen (Name, Mann oder Frau?)",
+          "Nenne 3 Personen (Name, Mann oder Frau?)"
+        ],
+        3: [
+          "Deine Familie, dein Freund/deine Freundin und seine/ihre Familie, die Getränke, die du trinkst."
+        ]
       },
       ΚΟΖΥελληνικά: {
         1: [
@@ -489,10 +601,30 @@
         ]
       },
       ТАКОЙрусский: {
-        
+        1: [
+          "Кофе или чай? Наличные или карта?"
+        ],
+        2: [
+          "Кто ты? (имя, мужчина или женщина, студент или учитель?)",
+          "Назови 3 известных человека (имя, мужчина или женщина?)",
+          "Назови 3 человека (имя, мужчина или женщина?)"
+        ],
+        3: [
+          "Твоя семья, твой друг/подруга и его/её семья, напитки, которые ты пьёшь."
+        ]
       },
        ԾՈՍՅհայկական: {
-
+        1: [
+          "Սուրճ թէ թէյ? Կանխիկ թէ քարտ?"
+        ],
+        2: [
+          "Ո՞վ ես դու: (անուն, տղամարդ կամ կին, ուսանող կամ ուսուցիչ?)",
+          "Անվանեք 3 հայտնի մարդկանց (անուն, տղամարդ կամ կին?)",
+          "Անվանեք 3 մարդկանց (անուն, տղամարդ կամ կին?)"
+        ],
+        3: [
+          "Քո ընտանիքը, քո ընկերը/ընկերուհին և նրա ընտանիքը, խմիչքները, որոնք դուք խմում եք:"
+        ]
       }
     };
 
@@ -505,12 +637,12 @@
               COSYenglish: "Hello",
               COSYfrançais: "Bonjour",
               COSYitaliano: "Buongiorno",
-              COSYespañol: "",
-              COSYportuguês: "",
-              COSYdeutsch: "",
+              COSYespañol: "Hola",
+              COSYportuguês: "Olá",
+              COSYdeutsch: "Hallo",
               ΚΟΖΥελληνικά: "Γεια σου",
-              ТАКОЙрусский: "",
-              ԾՈՍՅհայկական: ""
+              ТАКОЙрусский: "Привет",
+              ԾՈՍՅհայկական: "Բարև"
             }
           },
           { src: "https://knowt-user-attachments.s3.amazonaws.com/65d8a23f-f954-438a-b24a-7fb488fc3826.jpg", alt: "Goodbye",
@@ -518,12 +650,12 @@
               COSYenglish: "Goodbye",
               COSYfrançais: "Au revoir",
               COSYitaliano: "Arrivederci",
-              COSYespañol: "",
-              COSYportuguês: "",
-              COSYdeutsch: "",
+              COSYespañol: "Adiós",
+              COSYportuguês: "Adeus",
+              COSYdeutsch: "Auf Wiedersehen",
               ΚΟΖΥελληνικά: "Αντίο",
-              ТАКОЙрусский: "",
-              ԾՈՍՅհայկական: ""
+              ТАКОЙрусский: "До свидания",
+              ԾՈՍՅհայկական: "Ցտեսություն"
             }
           },
           { src: "https://knowt-user-attachments.s3.amazonaws.com/90fa8c25-9aba-424e-a7fd-adcfdd22cccd.jpg", alt: "Yes",
@@ -531,12 +663,12 @@
               COSYenglish: "Yes",
               COSYfrançais: "Oui",
               COSYitaliano: "Sì",
-              COSYespañol: "",
-              COSYportuguês: "",
-              COSYdeutsch: "",
+              COSYespañol: "Sí",
+              COSYportuguês: "Sim",
+              COSYdeutsch: "Ja",
               ΚΟΖΥελληνικά: "Ναι",
-              ТАКОЙрусский: "",
-              ԾՈՍՅհայկական: ""
+              ТАКОЙрусский: "Да",
+              ԾՈՍՅհայկական: "Այո"
             }
           },
           { src: "https://knowt-user-attachments.s3.amazonaws.com/490e0478-36f3-4f3f-90e0-f1ac3a63be42.jpg", alt: "No",
@@ -544,12 +676,12 @@
               COSYenglish: "No",
               COSYfrançais: "Non",
               COSYitaliano: "No",
-              COSYespañol: "",
-              COSYportuguês: "",
-              COSYdeutsch: "",
+              COSYespañol: "No",
+              COSYportuguês: "Não",
+              COSYdeutsch: "Nein",
               ΚΟΖΥελληνικά: "Όχι",
-              ТАКОЙрусский: "",
-              ԾՈՍՅհայկական: ""
+              ТАКОЙрусский: "Нет",
+              ԾՈՍՅհայկական: "Ոչ"
             }
           },
           { src: "https://knowt-user-attachments.s3.amazonaws.com/382b39c4-db7d-4fe0-a5d1-fc560bfabfd4.jpg", alt: "Thank you",
@@ -557,12 +689,12 @@
               COSYenglish: "Thank you",
               COSYfrançais: "Merci",
               COSYitaliano: "Grazie",
-              COSYespañol: "",
-              COSYportuguês: "",
-              COSYdeutsch: "",
+              COSYespañol: "Gracias",
+              COSYportuguês: "Obrigado",
+              COSYdeutsch: "Danke",
               ΚΟΖΥελληνικά: "Ευχαριστώ",
-              ТАКОЙрусский: "",
-              ԾՈՍՅհայկական: ""
+              ТАКОЙрусский: "Спасибо",
+              ԾՈՍՅհայկական: "Շնորհակալություն"
             }
           },
           { src: "https://knowt-user-attachments.s3.amazonaws.com/3cde6331-ebd8-443d-876b-c7100f7cfc9d.jpg", alt: "You're welcome",
@@ -570,12 +702,12 @@
               COSYenglish: "You're welcome",
               COSYfrançais: "De rien",
               COSYitaliano: "Prego",
-              COSYespañol: "",
-              COSYportuguês: "",
-              COSYdeutsch: "",
+              COSYespañol: "De nada",
+              COSYportuguês: "De nada",
+              COSYdeutsch: "Bitte",
               ΚΟΖΥελληνικά: "Παρακαλώ",
-              ТАКОЙрусский: "",
-              ԾՈՍՅհայկական: ""
+              ТАКОЙрусский: "Пожалуйста",
+              ԾՈՍՅհայկական: "Խնդրեմ"
             }
           },
           { src: "https://knowt-user-attachments.s3.amazonaws.com/a7c44794-c2d9-4a27-93c4-42827de4025e.jpg", alt: "Alright",
@@ -583,12 +715,12 @@
               COSYenglish: "Alright",
               COSYfrançais: "D'accord",
               COSYitaliano: "Bene",
-              COSYespañol: "",
-              COSYportuguês: "",
-              COSYdeutsch: "",
+              COSYespañol: "De acuerdo",
+              COSYportuguês: "Tudo bem",
+              COSYdeutsch: "In Ordnung",
               ΚΟΖΥελληνικά: "Εντάξει",
-              ТАКОЙрусский: "",
-              ԾՈՍՅհայկական: ""
+              ТАКОЙрусский: "Хорошо",
+              ԾՈՍՅհայկական: "Լավ"
             }
           },
           { src: "https://knowt-user-attachments.s3.amazonaws.com/ddc67279-12a7-497d-a260-0b6f0c24fc87.jpg", alt: "Sorry",
@@ -596,12 +728,12 @@
               COSYenglish: "Sorry",
               COSYfrançais: "Désolé.e",
               COSYitaliano: "Scusi.a",
-              COSYespañol: "",
-              COSYportuguês: "",
-              COSYdeutsch: "",
+              COSYespañol: "Lo siento",
+              COSYportuguês: "Desculpe",
+              COSYdeutsch: "Entschuldigung",
               ΚΟΖΥελληνικά: "Συγνώμη",
-              ТАКОЙрусский: "",
-              ԾՈՍՅհայկական: ""
+              ТАКОЙрусский: "Извините",
+              ԾՈՍՅհայկական: "Ներողություն"
             }
           },
           { src: "https://knowt-user-attachments.s3.amazonaws.com/3451f95e-17be-4cb7-a595-8228443a8bd1.jpg", alt: "Water",
@@ -609,12 +741,12 @@
               COSYenglish: "Water",
               COSYfrançais: "L'eau",
               COSYitaliano: "L'acqua",
-              COSYespañol: "",
-              COSYportuguês: "",
-              COSYdeutsch: "",
+              COSYespañol: "Agua",
+              COSYportuguês: "Água",
+              COSYdeutsch: "Wasser",
               ΚΟΖΥελληνικά: "το νερό",
-              ТАКОЙрусский: "",
-              ԾՈՍՅհայկական: ""
+              ТАКОЙрусский: "Вода",
+              ԾՈՍՅհայկական: "Ջուր"
             }
           },
           { src: "https://knowt-user-attachments.s3.amazonaws.com/9e4a4ad3-1dbb-40f7-bb45-d167b39e4a74.jpg", alt: "Juice",
@@ -622,12 +754,12 @@
               COSYenglish: "Juice",
               COSYfrançais: "Le jus",
               COSYitaliano: "Il succo",
-              COSYespañol: "",
-              COSYportuguês: "",
-              COSYdeutsch: "",
+              COSYespañol: "Jugo",
+              COSYportuguês: "Suco",
+              COSYdeutsch: "Saft",
               ΚΟΖΥελληνικά: "ο χυμός",
-              ТАКОЙрусский: "",
-              ԾՈՍՅհայկական: ""
+              ТАКОЙрусский: "Сок",
+              ԾՈՍՅհայկական: "Հյութ"
             }
           },
           { src: "https://knowt-user-attachments.s3.amazonaws.com/3bc85631-fdfe-4541-a663-d1f1cbbe386a.jpg", alt: "Beer",
@@ -635,12 +767,12 @@
               COSYenglish: "Beer",
               COSYfrançais: "La bière",
               COSYitaliano: "La birra",
-              COSYespañol: "",
-              COSYportuguês: "",
-              COSYdeutsch: "",
+              COSYespañol: "Cerveza",
+              COSYportuguês: "Cerveja",
+              COSYdeutsch: "Bier",
               ΚΟΖΥελληνικά: "η μπύρα",
-              ТАКОЙрусский: "",
-              ԾՈՍՅհայկական: ""
+              ТАКОЙрусский: "Пиво",
+              ԾՈՍՅհայկական: "Գարեջուր"
             }
           },
           { src: "https://knowt-user-attachments.s3.amazonaws.com/45878c62-cc5f-47fe-ae32-59847af15bda.jpg", alt: "Wine",
@@ -648,12 +780,12 @@
               COSYenglish: "Wine",
               COSYfrançais: "Le vin",
               COSYitaliano: "Il vino",
-              COSYespañol: "",
-              COSYportuguês: "",
-              COSYdeutsch: "",
+              COSYespañol: "Vino",
+              COSYportuguês: "Vinho",
+              COSYdeutsch: "Wein",
               ΚΟΖΥελληνικά: "το κρασί",
-              ТАКОЙрусский: "",
-              ԾՈՍՅհայկական: ""
+              ТАКОЙрусский: "Вино",
+              ԾՈՍՅհայկական: "Գինի"
             }
           },
           { src: "https://knowt-user-attachments.s3.amazonaws.com/830e8e98-43e7-4dc8-9d87-4c3fef5e2890.jpg", alt: "Coffee",
@@ -661,12 +793,12 @@
               COSYenglish: "Coffee",
               COSYfrançais: "Le café",
               COSYitaliano: "Il caffè",
-              COSYespañol: "",
-              COSYportuguês: "",
-              COSYdeutsch: "",
+              COSYespañol: "Café",
+              COSYportuguês: "Café",
+              COSYdeutsch: "Kaffee",
               ΚΟΖΥελληνικά: "ο καφές",
-              ТАКОЙрусский: "",
-              ԾՈՍՅհայկական: ""
+              ТАКОЙрусский: "Кофе",
+              ԾՈՍՅհայկական: "Սուրճ"
             }
           },
           { src: "https://knowt-user-attachments.s3.amazonaws.com/6a4e0b1d-f9ee-4a2b-a2f9-9dabef5ff864.jpg", alt: "Tea",
@@ -674,12 +806,12 @@
               COSYenglish: "Tea",
               COSYfrançais: "Le thé",
               COSYitaliano: "Il tè",
-              COSYespañol: "",
-              COSYportuguês: "",
-              COSYdeutsch: "",
+              COSYespañol: "Té",
+              COSYportuguês: "Chá",
+              COSYdeutsch: "Tee",
               ΚΟΖΥελληνικά: "το τσάι",
-              ТАКОЙрусский: "",
-              ԾՈՍՅհայկական: ""
+              ТАКОЙрусский: "Чай",
+              ԾՈՍՅհայկական: "Թեյ"
             }
           },
           { src: "https://knowt-user-attachments.s3.amazonaws.com/64259323-b73a-4c2b-80ab-4c5271331bf0.jpg", alt: "Card",
@@ -687,12 +819,12 @@
               COSYenglish: "Card",
               COSYfrançais: "La carte",
               COSYitaliano: "La carta",
-              COSYespañol: "",
-              COSYportuguês: "",
-              COSYdeutsch: "",
+              COSYespañol: "Tarjeta",
+              COSYportuguês: "Cartão",
+              COSYdeutsch: "Karte",
               ΚΟΖΥελληνικά: "η κάρτα",
-              ТАКОЙрусский: "",
-              ԾՈՍՅհայկական: ""
+              ТАКОЙрусский: "Карта",
+              ԾՈՍՅհայկական: "Քարտ"
             }
           },
           { src: "https://knowt-user-attachments.s3.amazonaws.com/c1a57a8c-d319-458a-ab77-dcda4b675b37.jpg", alt: "Cash",
@@ -700,12 +832,12 @@
               COSYenglish: "Cash",
               COSYfrançais: "Les espèces",
               COSYitaliano: "I contanti",
-              COSYespañol: "",
-              COSYportuguês: "",
-              COSYdeutsch: "",
+              COSYespañol: "Efectivo",
+              COSYportuguês: "Dinheiro",
+              COSYdeutsch: "Bargeld",
               ΚΟΖΥελληνικά: "τα μετρητά",
-              ТАКОЙрусский: "",
-              ԾՈՍՅհայկական: ""
+              ТАКОЙрусский: "Наличные",
+              ԾՈՍՅհայկական: "Կանխիկ"
             }
           },
         ],
@@ -715,12 +847,12 @@
               COSYenglish: "Person",
               COSYfrançais: "La personne",
               COSYitaliano: "La persona",
-              COSYespañol: "",
-              COSYportuguês: "",
-              COSYdeutsch: "",
+              COSYespañol: "Persona",
+              COSYportuguês: "Pessoa",
+              COSYdeutsch: "Person",
               ΚΟΖΥελληνικά: "το άτομο",
-              ТАКОЙрусский: "",
-              ԾՈՍՅհայկական: ""
+              ТАКОЙрусский: "Человек",
+              ԾՈՍՅհայկական: "Անձ"
             }
           },
           { src: "https://knowt-user-attachments.s3.amazonaws.com/dda78a79-0f1a-4aa2-a6a6-050f891fc3f9.jpg", alt: "Thing",
@@ -728,12 +860,12 @@
               COSYenglish: "Thing",
               COSYfrançais: "La chose",
               COSYitaliano: "La cosa",
-              COSYespañol: "",
-              COSYportuguês: "",
-              COSYdeutsch: "",
+              COSYespañol: "Cosa",
+              COSYportuguês: "Coisa",
+              COSYdeutsch: "Ding",
               ΚΟΖΥελληνικά: "το πράγμα",
-              ТАКОЙрусский: "",
-              ԾՈՍՅհայկական: ""
+              ТАКОЙрусский: "Вещь",
+              ԾՈՍՅհայկական: "Բան"
             }
           },
           { src: "https://knowt-user-attachments.s3.amazonaws.com/19c27994-8d24-4dd9-ae36-68fea5cda79b.jpg", alt: "Woman",
@@ -741,12 +873,12 @@
               COSYenglish: "Woman",
               COSYfrançais: "La femme",
               COSYitaliano: "La donna",
-              COSYespañol: "",
-              COSYportuguês: "",
-              COSYdeutsch: "",
+              COSYespañol: "Mujer",
+              COSYportuguês: "Mulher",
+              COSYdeutsch: "Frau",
               ΚΟΖΥελληνικά: "η γυναίκα",
-              ТАКОЙрусский: "",
-              ԾՈՍՅհայկական: ""
+              ТАКОЙрусский: "Женщина",
+              ԾՈՍՅհայկական: "Կին"
             }
           },
           { src: "https://knowt-user-attachments.s3.amazonaws.com/bbb56ff3-c6ec-438a-834b-aa120d862856.jpg", alt: "Man",
@@ -754,12 +886,12 @@
               COSYenglish: "Man",
               COSYfrançais: "L'homme",
               COSYitaliano: "L'uomo",
-              COSYespañol: "",
-              COSYportuguês: "",
-              COSYdeutsch: "",
+              COSYespañol: "Hombre",
+              COSYportuguês: "Homem",
+              COSYdeutsch: "Mann",
               ΚΟΖΥελληνικά: "ο άντρας",
-              ТАКОЙрусский: "",
-              ԾՈՍՅհայկական: ""
+              ТАКОЙрусский: "Мужчина",
+              ԾՈՍՅհայկական: "Տղամարդ"
             }
           },
           { src: "https://knowt-user-attachments.s3.amazonaws.com/1635fa13-3874-4310-b895-1a4c905e2f91.jpg", alt: "Girl",
@@ -767,12 +899,12 @@
               COSYenglish: "Girl",
               COSYfrançais: "La fille",
               COSYitaliano: "La ragazza",
-              COSYespañol: "",
-              COSYportuguês: "",
-              COSYdeutsch: "",
+              COSYespañol: "Chica",
+              COSYportuguês: "Rapariga",
+              COSYdeutsch: "Mädchen",
               ΚΟΖΥελληνικά: "το κορίτσι",
-              ТАКОЙрусский: "",
-              ԾՈՍՅհայկական: ""
+              ТАКОЙрусский: "Девочка",
+              ԾՈՍՅհայկական: "Աղջիկ"
             }
           },
           { src: "https://knowt-user-attachments.s3.amazonaws.com/ba646c3b-dbd1-47a4-89ef-aaf0a4ae14b3.jpg", alt: "Boy",
@@ -780,12 +912,12 @@
               COSYenglish: "Boy",
               COSYfrançais: "Le garçon",
               COSYitaliano: "Il ragazzo",
-              COSYespañol: "",
-              COSYportuguês: "",
-              COSYdeutsch: "",
+              COSYespañol: "Chico",
+              COSYportuguês: "Rapaz",
+              COSYdeutsch: "Junge",
               ΚΟΖΥελληνικά: "το αγόρι",
-              ТАКОЙрусский: "",
-              ԾՈՍՅհայկական: ""
+              ТАКОЙрусский: "Мальчик",
+              ԾՈՍՅհայկական: "Տղա"
             }
           },
           { src: "https://knowt-user-attachments.s3.amazonaws.com/41280cd4-99a6-4217-930a-7084b28ce44f.jpg", alt: "Student",
@@ -793,12 +925,12 @@
               COSYenglish: "Student",
               COSYfrançais: "L'étudiante",
               COSYitaliano: "La studentessa",
-              COSYespañol: "",
-              COSYportuguês: "",
-              COSYdeutsch: "",
+              COSYespañol: "Estudiante",
+              COSYportuguês: "Estudante",
+              COSYdeutsch: "Studentin",
               ΚΟΖΥελληνικά: "η μαθήτρια",
-              ТАКОЙрусский: "",
-              ԾՈՍՅհայկական: ""
+              ТАКОЙрусский: "Студентка",
+              ԾՈՍՅհայկական: "Ուսանողուհի"
             }
           },
           { src: "https://knowt-user-attachments.s3.amazonaws.com/df25f307-75ec-4302-9cdf-3a2717142c46.jpg", alt: "Student",
@@ -806,12 +938,12 @@
               COSYenglish: "Student",
               COSYfrançais: "L'étudiant",
               COSYitaliano: "Lo studente",
-              COSYespañol: "",
-              COSYportuguês: "",
-              COSYdeutsch: "",
+              COSYespañol: "Estudiante",
+              COSYportuguês: "Estudante",
+              COSYdeutsch: "Student",
               ΚΟΖΥελληνικά: "ο μαθητής",
-              ТАКОЙрусский: "",
-              ԾՈՍՅհայկական: ""
+              ТАКОЙрусский: "Студент",
+              ԾՈՍՅհայկական: "Ուսանող"
             }
           },
           { src: "https://knowt-user-attachments.s3.amazonaws.com/685a6f52-53b1-4e8d-9f1b-2dfb606d737c.jpg", alt: "Teacher",
@@ -819,12 +951,12 @@
               COSYenglish: "Teacher",
               COSYfrançais: "La professeur",
               COSYitaliano: "La professoressa",
-              COSYespañol: "",
-              COSYportuguês: "",
-              COSYdeutsch: "",
+              COSYespañol: "Profesora",
+              COSYportuguês: "Professora",
+              COSYdeutsch: "Lehrerin",
               ΚΟΖΥελληνικά: "η δασκάλα",
-              ТАКОЙрусский: "",
-              ԾՈՍՅհայկական: ""
+              ТАКОЙрусский: "Учительница",
+              ԾՈՍՅհայկական: "Ուսուցչուհի"
             }
           },
           { src: "https://knowt-user-attachments.s3.amazonaws.com/b9578d45-6894-47be-b7f4-751763537360.jpg", alt: "Teacher",
@@ -832,12 +964,12 @@
               COSYenglish: "Teacher",
               COSYfrançais: "Le professeur",
               COSYitaliano: "Il professore",
-              COSYespañol: "",
-              COSYportuguês: "",
-              COSYdeutsch: "",
+              COSYespañol: "Profesor",
+              COSYportuguês: "Professor",
+              COSYdeutsch: "Lehrer",
               ΚΟΖΥελληνικά: "ο δάσκαλος",
-              ТАКОЙрусский: "",
-              ԾՈՍՅհայկական: ""
+              ТАКОЙрусский: "Учитель",
+              ԾՈՍՅհայկական: "Ուսուցիչ"
             }
           },
           { src: "https://knowt-user-attachments.s3.amazonaws.com/69591591-9112-49ec-a554-f1d055855c5e.jpg", alt: "Nice to meet you",
@@ -845,12 +977,12 @@
               COSYenglish: "Nice to meet you",
               COSYfrançais: "Enchanté.e",
               COSYitaliano: "Piacere",
-              COSYespañol: "",
-              COSYportuguês: "",
-              COSYdeutsch: "",
+              COSYespañol: "Encantado/a",
+              COSYportuguês: "Prazer",
+              COSYdeutsch: "Freut mich",
               ΚΟΖΥελληνικά: "Χαίρω πολύ",
-              ТАКОЙрусский: "",
-              ԾՈՍՅհայկական: ""
+              ТАКОЙрусский: "Приятно познакомиться",
+              ԾՈՍՅհայկական: "Ուրախ եմ ձեզ հետ ծանոթանալու համար"
             }
           },
         ],
@@ -885,7 +1017,7 @@
       }
     };
 
-   // 2. IMPROVED VOICE HANDLING
+    // 2. IMPROVED VOICE HANDLING
     const voiceLanguageMap = {
       COSYenglish: { lang: "en-US", voiceURI: "Google US English" },
       COSYfrançais: { lang: "fr-FR", voiceURI: "Google français" },
@@ -1039,11 +1171,15 @@
                   // For day 3, show options to choose grammar type
                   const optionsDiv = document.createElement("div");
                   optionsDiv.className = "grammar-options";
-                  optionsDiv.innerHTML = "<p>Choose grammar practice for Day 3:</p>";
+                  
+                  const questions = questionTranslations[language] || questionTranslations.COSYenglish;
+                  optionsDiv.innerHTML = `<p>${questions.choose}</p>`;
+                  
+                  const options = grammarOptionsText[language] || grammarOptionsText.COSYenglish;
                   
                   const toHaveOption = document.createElement("div");
                   toHaveOption.className = "grammar-option";
-                  toHaveOption.textContent = "To Have";
+                  toHaveOption.textContent = options.to_have;
                   toHaveOption.addEventListener("click", () => {
                     const grammar = randomElement(grammarData[language][d].to_have);
                     resultContainer.innerHTML = "";
@@ -1053,7 +1189,7 @@
                   
                   const possessivesOption = document.createElement("div");
                   possessivesOption.className = "grammar-option";
-                  possessivesOption.textContent = "Possessive Adjectives";
+                  possessivesOption.textContent = options.possessives;
                   possessivesOption.addEventListener("click", () => {
                     const grammar = randomElement(grammarData[language][d].possessives);
                     resultContainer.innerHTML = "";
@@ -1118,14 +1254,17 @@
             const container = document.createElement("div");
             container.className = "image-container";
             
+            // Get questions in selected language
+            const questions = questionTranslations[language] || questionTranslations.COSYenglish;
+            
             // Create question based on day
             const questionDiv = document.createElement("div");
             questionDiv.className = "image-question";
             
             if (daysToUse.includes(1)) {
-              questionDiv.textContent = "What is it?";
+              questionDiv.textContent = questions.what;
             } else {
-              questionDiv.innerHTML = "Who is it?<br>What is it?";
+              questionDiv.innerHTML = `${questions.who}<br>${questions.what}`;
             }
             
             // Create image element
