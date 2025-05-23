@@ -72,37 +72,34 @@
     // Data sets with full phrases/statements
   const vocabData = {
     COSYenglish: {
-      1: ["Hello", "Goodbye", "Thank you", "You're welcome", "One coffee, please", "One tea, please"],
-      2: ["Boy", "Girl", "Teacher", "Student", "Woman", "Man", "Person", "Thing"],
-      3: ["Mother", "Father", "Son", "Daughter", "Sister", "Brother", "Husband", "Wife", "Friend"]
+      1: ["Hello", "Goodbye", "Thank you", "You're welcome", "One coffee, please", "One tea, please", "Cash", "Card", "Wine", "Beer", "Water", "Juice", "Alright", "Sorry"],
+      2: ["Boy", "Girl", "Teacher", "Student", "Woman", "Man", "Person", "Thing", "What", "Who"],
+      3: ["Mother", "Father", "Son", "Daughter", "Sister", "Brother", "Husband", "Wife", "Friend", ],
+      4: ["Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine"],
+      5: ["Good", "Bad", "Easy", "Difficult", "Boring", "Interesting", "Big", "Small", "Hot", "Cold", "Cheap", "Expensive"],
+      6: []
     },
     COSYfrançais: {
-      1: ["Bonjour", "Au revoir", "Merci", "De rien", "Un café, s'il vous plaît", "Un thé, s'il vous plaît"],
+      1: ["Bonjour", "Au revoir", "Merci", "De rien", "Un café, s'il vous plaît", "Un thé, s'il vous plaît", "Espèces", "La carte", "Le vin", "La bière", "L'eau", "Le jus", "D'accord", "Désolé.e"],
       2: ["Le garçon", "la fille", "le/la professeur", "l'étudiant.e", "la femme", "l'homme", "la personne", "la chose"],
-      3: ["La mère", "Le père", "Le fils", "La fille", "La sœur", "Le frère", "Le mari", "La femme", "L'ami", "L'amie"]
+      3: ["La mère", "Le père", "Le fils", "La fille", "La sœur", "Le frère", "Le mari", "La femme", "L'ami", "L'amie"],
     },
     COSYitaliano: {
-      1: ["Ciao", "Addio", "Grazie", "Prego", "Un caffè, per favore", "Un tè, per favore"], 
+      1: ["Ciao", "Addio", "Grazie", "Prego", "Un caffè, per favore", "Un tè, per favore", "Contanti", "La carta", "Il vino", "La birra", "L'acqua", "Il succo", "Bene","Scusi.a"], 
       2: ["Il ragazzo", "La ragazza", "L'insegnante", "Lo studente", "La donna", "L'uomo", "La persona", "La cosa"],
       3: ["la madre", "Il padre", "Il figlio", "La figlia", "La sorella", "Fratello", "Marito", "Moglie", "Amico/a"]
     },
     COSYespañol: {
-      1: ["Hola", "Adiós", "Gracias", "De nada", "Un café, por favor", "Un té, por favor"],
-      2: ["Niño", "Niña", "Profesor"],
-      3: ["Madre", "Padre", "Hijo", "Hija", "Hermana", "Hermano", "Marido", "Esposa", "Amigo/a"]
+     
     },
     COSYportuguês: {
-      1: ["Olá", "Adeus", "Obrigado", "De nada", "Um café, por favor", "Um chá, por favor"],
-      2: ["Menino", "Menina", "Professor"],
-      3: ["Mãe", "Pai", "Filho", "Filha", "Irmã", "Irmão", "Marido", "Esposa", "Amigo/a"]
+      
     },
     COSYdeutsch: {
-      1: ["Hallo", "Auf Wiedersehen", "Danke", "Bitte", "Einen Kaffee, bitte", "Einen Tee, bitte"],
-      2: ["Junge", "Mädchen", "Lehrer"],
-      3: ["Mutter", "Vater", "Sohn", "Tochter", "Schwester", "Bruder", "Ehemann", "Ehefrau", "Freund/in"]
+      
     },
     ΚΟΖΥελληνικά: {
-      1: ["Γειά", "Αντίο", "Ευχαριστώ", "Παρακαλώ", "Έναν καφέ, παρακαλώ", "Ένα τσάι, παρακαλώ"],
+      1: ["Γειά", "Αντίο", "Ευχαριστώ", "Παρακαλώ", "Έναν καφέ, παρακαλώ", "Ένα τσάι, παρακαλώ", "Μετρητά", "Η κάρτα", "Το κρασί", "Η μπύρα", "Το νερό", "Ο χυμός", "Εντάξει", "Συγγνώμη"],
       2: ["Αγόρι", "Κορίτσι", "Δάσκαλος"],
       3: ["Μητέρα", "Πατέρας", "Γιος", "Κόρη", "Αδερφή", "Αδερφός", "Σύζυγος", "Σύζυγος", "Φίλος/Φίλη"]
     },
@@ -119,9 +116,9 @@
   const grammarData = {
     COSYenglish: {
       1: [
-        "I am a student.",
-        "You are a teacher.",
-        "He is a doctor."
+        "What is it?",
+        "Is it water?",
+        "Is it water or tea?"
       ],
       2: [
         "She has a book.",
@@ -135,9 +132,9 @@
     },
     COSYfrançais: {
       1: [
-        "Je suis un étudiant.",
-        "Tu es un professeur.",
-        "Il est médecin."
+        "C'est quoi?",
+        "Est-ce une eau?",
+        "Est-ce une eau ou un thé?"
       ],
       2: [
         "Elle a un livre.",
@@ -166,58 +163,19 @@
       ]
     },
     COSYespañol: {
-      1: [
-        "Soy un estudiante.",
-        "Eres un profesor.",
-        "Él es doctor."
-      ],
-      2: [
-        "Ella tiene un libro.",
-        "Estamos felices.",
-        "Ellos viven en Madrid."
-      ],
-      3: [
-        "Tener (ejemplos): Tengo una madre. Tienes una hermana. Él tiene un hijo.",
-        "Posesivos (ejemplos): mi madre, tu hermana, su hijo, su marido."
-      ]
+      
     },
     COSYportuguês: {
-      1: [
-        "Eu sou um estudante.",
-        "Você é um professor.",
-        "Ele é médico."
-      ],
-      2: [
-        "Ela tem um livro.",
-        "Estamos felizes.",
-        "Eles moram em Lisboa."
-      ],
-      3: [
-        "Ter (exemplos): Eu tenho uma mãe. Você tem uma irmã. Ele tem um filho.",
-        "Possessivos (exemplos): minha mãe, sua irmã, seu filho, seu marido."
-      ]
+      
     },
     COSYdeutsch: {
-      1: [
-        "Ich bin ein Schüler.",
-        "Du bist ein Lehrer.",
-        "Er ist Arzt."
-      ],
-      2: [
-        "Sie hat ein Buch.",
-        "Wir sind glücklich.",
-        "Sie wohnen in Berlin."
-      ],
-      3: [
-        "Haben (Beispiele): Ich habe eine Mutter. Du hast eine Schwester. Er hat einen Sohn.",
-        "Possessivpronomen (Beispiele): meine Mutter, deine Schwester, sein Sohn, ihr Mann."
-      ]
+      
     },
     ΚΟΖΥελληνικά: {
       1: [
-        "Είμαι μαθητής.",
-        "Είσαι δάσκαλος.",
-        "Αυτός είναι γιατρός."
+        "Τι είναι;",
+        "Είναι νερό;",
+        "Είναι νερό ή τσάι;"
       ],
       2: [
         "Έχει ένα βιβλίο.",
