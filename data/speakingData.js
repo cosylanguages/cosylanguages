@@ -1,12 +1,18 @@
 const speakingData = {
       COSYenglish: {
-        1: [ 
-          "Coffee or tea? Cash or card?"
-        ],
+        1: ["Coffee or tea? Cash or card?"],
         2: [
           "Who are you? (name, man or woman, student or teacher?)",
           "Name 3 popular people (name, man or woman?)",
-          "Name 3 people (name, man or woman?)"
+          "Name 3 people (name, man or woman?)",
+          {
+            type: "name_people",
+            images: [
+              "https://media.cloudstori.com/files/LessonExerciseImages/1a1d5e09-fea1-4ac7-a3d5-894ae6714c93.png",
+              "https://media.cloudstori.com/files/LessonExerciseImages/10ab46bc-8417-4546-a265-50539ae65794.png",
+              "https://media.cloudstori.com/files/LessonExerciseImages/3f174cbd-f5cf-4fc5-a2cc-b77335b02874.png"
+            ]
+          }
         ],
         3: [
           "Your family",
