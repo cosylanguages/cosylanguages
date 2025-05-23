@@ -5,6 +5,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>COSYlanguages</title>
   <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Add some styling for the images */
+    .vocab-image {
+      max-width: 200px; /* Make images smaller */
+      max-height: 200px;
+      cursor: pointer; /* Show pointer cursor to indicate clickability */
+      margin: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+    
+    .image-container {
+      position: relative;
+      display: inline-block;
+    }
+    
+    .image-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: rgba(0,0,0,0.7);
+      color: white;
+      padding: 5px;
+      text-align: center;
+      display: none; /* Initially hidden */
+    }
+  </style>
 </head>
 <body>
 
@@ -349,7 +377,17 @@
             }
           },
           { src: "https://knowt-user-attachments.s3.amazonaws.com/65d8a23f-f954-438a-b24a-7fb488fc3826.jpg", alt: "Goodbye",
-           }
+            translations: {
+              COSYenglish: "Goodbye",
+              COSYfrançais: "Au revoir",
+              COSYitaliano: "Arrivederci",
+              COSYespañol: "",
+              COSYportuguês: "",
+              COSYdeutsch: "",
+              ΚΟΖΥελληνικά: "Εικόνα αποχαιρετισμού",
+              ТАКОЙрусский: "",
+              ԾՈՍՅհայկական: ""
+            }
           },
         ],
         2: [
@@ -592,17 +630,41 @@
               break;
             }
             const imgObj = randomElement(combinedImages);
+            
+            // Create container for image and caption
+            const container = document.createElement("div");
+            container.className = "image-container";
+            
+            // Create image element
             const imgElem = document.createElement("img");
             imgElem.src = imgObj.src;
+            imgElem.className = "vocab-image";
             
             // Use translated alt text if available
             const altText = imgObj.translations?.[language] || imgObj.alt || "Image";
             imgElem.alt = altText;
             
-            resultContainer.appendChild(imgElem);
+            // Create caption element
+            const caption = document.createElement("div");
+            caption.className = "image-caption";
+            caption.textContent = altText;
             
-            // Speak the translated alt text
-            speakText(altText, language);
+            // Add click event to toggle caption visibility
+            imgElem.addEventListener("click", () => {
+              caption.style.display = caption.style.display === "none" ? "block" : "none";
+            });
+            
+            // Initially hide the caption
+            caption.style.display = "none";
+            
+            // Add elements to container
+            container.appendChild(imgElem);
+            container.appendChild(caption);
+            
+            // Add container to result
+            resultContainer.appendChild(container);
+            
+            // Note: Removed the automatic speaking of the alt text
           }
           break;
 
