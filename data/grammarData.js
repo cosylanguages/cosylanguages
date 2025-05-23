@@ -62,16 +62,25 @@ const grammarData = {
         }
       },
       COSYitaliano: {
-        2: [
+      1: [
+          "Acqua",
+          "Vino",
+          "Carta",
+          "Birra",
+          "Succo",
+          "Caffè",
+          "Tè"
+            ],
+      2: [
          "Io",
-          "Tu",
+      "Tu",
           "Lui",
           "Lei",
           "sono",
           "sei",
           "è"
         ],
-        3: {
+      3: {
           to_have: [
             "Io",
             "Tu",
