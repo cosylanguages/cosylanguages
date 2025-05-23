@@ -185,7 +185,8 @@
 
     const grammarData = {
       COSYenglish: {    
-        2: [
+        2: {
+          To_be: [
           "I",
           "You",
           "He",
@@ -195,8 +196,9 @@
           "are",
           "is"
         ],
+          },
         3: {
-          to_have: [
+          To_have: [
             "I",
             "You",
             "He",
@@ -205,13 +207,25 @@
             "have",
             "has"
           ],
-          possessives: [
+          Possessives: [
             "Possessives (examples): my mother, your sister, his son, her husband."
           ]
         }
       },
       COSYfrançais: {
-        2: [
+        1: {
+          Genre: [
+          "Eau",
+          "Vin",
+          "Carte",
+          "Bière",
+          "Jus",
+          "Caffé",
+          "Thé"
+          ]
+            },
+        2: {
+        Être: [
           "Je",
           "Tu",
           "Il",
@@ -220,9 +234,10 @@
           "suis",
           "es",
           "est"
-        ],
+        ]
+          },
         3: {
-          to_have: [
+          Avoir: [
             "J'",
             "Tu",
             "Il",
@@ -231,14 +246,30 @@
             "ai",
             "as",
             "a"
-          ],
-          possessives: [
-            "Possessifs (exemples) : ma mère, ta sœur, son fils, son mari."
+            ]
+          },
+          Possessifs: [
+            "Ma mère", 
+            "Ta sœur", 
+            "Son fils", 
+            "Son mari"
           ]
         }
       },
       COSYitaliano: {
-        2: [
+       1: {
+          Genere: [
+          "Acqua",
+          "Vino",
+          "Carta",
+          "Birra",
+          "Succo",
+          "Caffè",
+          "Tè"
+          ]
+         },
+        2: {
+         Essere: [
          "Io",
           "Tu",
           "Lui",
@@ -246,9 +277,10 @@
           "sono",
           "sei",
           "è"
-        ],
+        ]
+          },
         3: {
-          to_have: [
+          Avere: [
             "Io",
             "Tu",
             "Lui",
@@ -272,7 +304,19 @@
         
       },
       ΚΟΖΥελληνικά: {
-        2: [
+        1: {
+          Γένος: [
+          "Νερό",
+          "Κρασί",
+          "Χάρτης",
+          "Μπύρα",
+          "Χυμός",
+          "Caffé",
+          "Τσάι"
+          ]
+         },
+        2: {
+          Είναι: [
          "Εγώ",
           "Εσύ",
           "Αυτός",
@@ -283,7 +327,7 @@
           "είναι"
         ],
         3: {
-          to_have: [
+          Έχω: [
             "Εγώ",
             "Εσύ",
             "Αυτός",
@@ -293,7 +337,7 @@
             "έχεις",
             "έχει"
           ],
-          possessives: [
+          Κτητικές_αντωνυμίες: [
             "Κτητικές αντωνυμίες (παραδείγματα): η μητέρα μου, η αδερφή σου, ο γιος του, ο σύζυγός της."
           ]
         }
