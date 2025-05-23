@@ -99,4 +99,101 @@
     option[data-bg="ТАКОЙрусский"] { background-color: #fb8500; color: #000; }
     option[data-bg="ԾՈՍՅհայկական"] { background-color: #fb8500; color: #000; }
 }
-<body>
+/* Image styling */
+    .vocab-image {
+      max-width: 200px;
+      max-height: 200px;
+      cursor: pointer;
+      margin: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      display: block;
+    }
+    
+    .image-container {
+      position: relative;
+      display: inline-block;
+      text-align: center;
+      margin: 20px;
+    }
+    
+    .image-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: rgba(0,0,0,0.7);
+      color: white;
+      padding: 5px;
+      text-align: center;
+      display: none;
+    }
+    
+    .image-question {
+      font-weight: bold;
+      margin-bottom: 10px;
+      font-size: 1.2em;
+      color: #333;
+      text-align: center;
+    }
+    
+    /* Grammar options */
+    .grammar-options {
+      margin: 10px 0;
+      padding: 10px;
+      background: #f5f5f5;
+      border-radius: 5px;
+    }
+    
+    .grammar-option {
+      margin: 5px;
+      padding: 8px 15px;
+      background: #e0e0e0;
+      border-radius: 3px;
+      cursor: pointer;
+      display: inline-block;
+      transition: background-color 0.3s;
+    }
+    
+    .grammar-option:hover {
+      background: #d0d0d0;
+    }
+    
+    /* Gender practice */
+    .gender-practice {
+      margin: 20px 0;
+    }
+    
+    .gender-word {
+      cursor: pointer;
+      margin: 5px;
+      padding: 8px 12px;
+      display: inline-block;
+      background-color: #f8f9fa;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+    }
+    
+    .gender-word:hover {
+      background-color: #e9ecef;
+    }
+    
+    .article-display {
+      font-weight: bold;
+      color: #0066cc;
+      margin-left: 5px;
+    }
+    
+    /* Speaking exercise */
+    .speaking-exercise {
+      margin: 20px 0;
+      padding: 15px;
+      background-color: #f8f9fa;
+      border-radius: 5px;
+    }
+    
+    .exercise-title {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+</body>
