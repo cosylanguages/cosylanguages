@@ -100,7 +100,7 @@
     // Data sets with full phrases/statements
     const vocabData = {
       COSYenglish: {
-        1: ["Hello", "Goodbye", "Yes", "No", "Thank you", "You're welcome", "One coffee, please", "One tea, please", "Cash", "Card"],
+        1: ["Hello", "Goodbye", "Yes", "No", "Thank you", "You're welcome"],
         2: ["Boy", "Girl", "Teacher", "Student", "Woman", "Man", "Person", "Thing", "What", "Who", "Nice to meet you", "For me", "Drink", "No problem"],
         3: ["Mother", "Father", "Son", "Daughter", "Sister", "Brother", "Husband", "Wife", "Friend"],
         4: ["Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine"],
@@ -108,12 +108,12 @@
         6: []
       },
       COSYfrançais: {
-        1: ["Bonjour", "Au revoir", "Oui", "Non", "Merci", "De rien", "Un café, s'il vous plaît", "Un thé, s'il vous plaît", "Espèces", "La carte"],
+        1: ["Bonjour", "Au revoir", "Oui", "Non", "Merci", "De rien"],
         2: ["Le garçon", "La fille", "Le professeur", "La professeur", "L'étudiant", "L'étudiante", "La femme", "L'homme", "La personne", "La chose", "Enchanté.e", "Pour moi", "La boission", "Pas de problème"],
         3: ["La mère", "Le père", "Le fils", "La fille", "La sœur", "Le frère", "Le mari", "La femme", "L'ami", "L'amie"],
       },
       COSYitaliano: {
-        1: ["Ciao", "Addio", "Sì", "No", "Grazie", "Prego", "Un caffè, per favore", "Un tè, per favore", "Contanti", "La carta"], 
+        1: ["Buongiorno", "Arrivederci", "Sì", "No", "Grazie", "Prego"], 
         2: ["Il ragazzo", "La ragazza", "Il professore", "La professoressa", "Lo studente", "La studentessa", "La donna", "L'uomo", "La persona", "La cosa", "Piacere", "Per me", "La bevanda", "Nessun problema"],
         3: ["la madre", "Il padre", "Il figlio", "La figlia", "La sorella", "Fratello", "Marito", "Moglie", "Amico/a"]
       },
@@ -127,7 +127,7 @@
         
       },
       ΚΟΖΥελληνικά: {
-        1: ["Γειά σου", "Αντίο", "Όχι", "Ναι", "Ευχαριστώ", "Παρακαλώ", "Έναν καφέ, παρακαλώ", "Ένα τσάι, παρακαλώ", "Μετρητά", "Η κάρτα"],
+        1: ["Γειά σου", "Αντίο", "Όχι", "Ναι", "Ευχαριστώ", "Παρακαλώ"],
         2: ["Το αγόρι", "Το κορίτσι", "Ο δάσκαλος", "Η δασκάλα", "Ο μαθητής", "Η μαθήτρια", "Η γυναίκα", "Ο άντρας", "Το άτομο", "Το πράγμα", "Χαίρω πολύ", "Για μένα", "Το ποτό", "Κανένα πρόβλημα"],
         3: ["Μητέρα", "Πατέρας", "Γιος", "Κόρη", "Αδερφή", "Αδερφός", "Σύζυγος", "Σύζυγος", "Φίλος/Φίλη"]
       },
@@ -152,7 +152,14 @@
           "is"
         ],
         3: [
-          "To have (examples): I have a mother. You have a sister. He has a son.",
+          "I",
+          "You",
+          "He",
+          "She",
+          "It",
+          "have",
+          "has",
+          
           "Possessives (examples): my mother, your sister, his son, her husband."
         ]
       },
@@ -168,7 +175,14 @@
           "est"
         ],
         3: [
-          "Avoir (exemples) : J'ai une mère. Tu as une sœur. Il a un fils.",
+          "J'",
+          "Tu",
+          "Il",
+          "Elle",
+          "Ce",
+          "ai",
+          "as",
+          "a"
           "Possessifs (exemples) : ma mère, ta sœur, son fils, son mari."
         ]
       },
@@ -183,7 +197,13 @@
           "è"
         ],
         3: [
-          "Avere (esempi): Ho una madre. Hai una sorella. Lui ha un figlio.",
+          "Io",
+          "Tu",
+          "Lui",
+          "Lei",
+          "ho",
+          "hai",
+          "ha"
           "Possessivi (esempi): mia madre, tua sorella, suo figlio, suo marito."
         ]
       },
@@ -208,25 +228,19 @@
           "είναι"
         ],
         3: [
-          "Έχω (παραδείγματα): Έχω μια μητέρα. Έχεις μια αδερφή. Αυτός έχει έναν γιο.",
+          "Εγώ",
+          "Εσύ",
+          "Αυτός",
+          "Αυτή",
+          "Αυτό",
+          "έχω",
+          "έχεις",
+          "έχει"
           "Κτητικές αντωνυμίες (παραδείγματα): η μητέρα μου, η αδερφή σου, ο γιος του, ο σύζυγός της."
         ]
       },
       ТАКОЙрусский: {
-        1: [
-          "Я студент.",
-          "Ты учитель.",
-          "Он врач."
-        ],
-        2: [
-          "У неё есть книга.",
-          "Мы счастливы.",
-          "Они живут в Москве."
-        ],
-        3: [
-          "Иметь (примеры): У меня есть мать. У тебя есть сестра. У него есть сын.",
-          "Притяжательные местоимения (примеры): моя мать, твоя сестра, его сын, её муж."
-        ]
+        
       },
        ԾՈՍՅհայկական: {
 
@@ -517,19 +531,149 @@
           },
         ],
         2: [
-          { src: "https://i.imgur.com/6oXTFPa.jpg", alt: "Boy and girl",
+          { src: "https://knowt-user-attachments.s3.amazonaws.com/58492698-ae86-4d3a-8fc5-a22b55b2aa00.jpg", alt: "Person",
             translations: {
-              COSYenglish: "Boy and girl",
-              COSYfrançais: "Garçon et fille",
-              COSYitaliano: "Ragazzo e ragazza",
-              COSYespañol: "Niño y niña",
-              COSYportuguês: "Menino e menina",
-              COSYdeutsch: "Junge und Mädchen",
-              ΚΟΖΥελληνικά: "Αγόρι και κορίτσι",
-              ТАКОЙрусский: "Мальчик и девочка",
-              ԾՈՍՅհայկական: "Տղա և աղջիկ"
+              COSYenglish: "Person",
+              COSYfrançais: "La personne",
+              COSYitaliano: "La persona",
+              COSYespañol: "",
+              COSYportuguês: "",
+              COSYdeutsch: "",
+              ΚΟΖΥελληνικά: "το άτομο",
+              ТАКОЙрусский: "",
+              ԾՈՍՅհայկական: ""
             }
-          }
+          },
+          { src: "https://knowt-user-attachments.s3.amazonaws.com/dda78a79-0f1a-4aa2-a6a6-050f891fc3f9.jpg", alt: "Thing",
+            translations: {
+              COSYenglish: "Thing",
+              COSYfrançais: "La chose",
+              COSYitaliano: "La cosa",
+              COSYespañol: "",
+              COSYportuguês: "",
+              COSYdeutsch: "",
+              ΚΟΖΥελληνικά: "το πράγμα",
+              ТАКОЙрусский: "",
+              ԾՈՍՅհայկական: ""
+            }
+          },
+          { src: "https://knowt-user-attachments.s3.amazonaws.com/19c27994-8d24-4dd9-ae36-68fea5cda79b.jpg", alt: "Woman",
+            translations: {
+              COSYenglish: "Woman",
+              COSYfrançais: "La femme",
+              COSYitaliano: "La donna",
+              COSYespañol: "",
+              COSYportuguês: "",
+              COSYdeutsch: "",
+              ΚΟΖΥελληνικά: "η γυναίκα",
+              ТАКОЙрусский: "",
+              ԾՈՍՅհայկական: ""
+            }
+          },
+          { src: "https://knowt-user-attachments.s3.amazonaws.com/bbb56ff3-c6ec-438a-834b-aa120d862856.jpg", alt: "Man",
+            translations: {
+              COSYenglish: "Man",
+              COSYfrançais: "L'homme",
+              COSYitaliano: "L'uomo",
+              COSYespañol: "",
+              COSYportuguês: "",
+              COSYdeutsch: "",
+              ΚΟΖΥελληνικά: "ο άντρας",
+              ТАКОЙрусский: "",
+              ԾՈՍՅհայկական: ""
+            }
+          },
+          { src: "https://knowt-user-attachments.s3.amazonaws.com/1635fa13-3874-4310-b895-1a4c905e2f91.jpg", alt: "Girl",
+            translations: {
+              COSYenglish: "Girl",
+              COSYfrançais: "La fille",
+              COSYitaliano: "La ragazza",
+              COSYespañol: "",
+              COSYportuguês: "",
+              COSYdeutsch: "",
+              ΚΟΖΥελληνικά: "το κορίτσι",
+              ТАКОЙрусский: "",
+              ԾՈՍՅհայկական: ""
+            }
+          },
+          { src: "https://knowt-user-attachments.s3.amazonaws.com/ba646c3b-dbd1-47a4-89ef-aaf0a4ae14b3.jpg", alt: "Boy",
+            translations: {
+              COSYenglish: "Boy",
+              COSYfrançais: "Le garçon",
+              COSYitaliano: "Il ragazzo",
+              COSYespañol: "",
+              COSYportuguês: "",
+              COSYdeutsch: "",
+              ΚΟΖΥελληνικά: "το αγόρι",
+              ТАКОЙрусский: "",
+              ԾՈՍՅհայկական: ""
+            }
+          },
+          { src: "https://knowt-user-attachments.s3.amazonaws.com/41280cd4-99a6-4217-930a-7084b28ce44f.jpg", alt: "Student",
+            translations: {
+              COSYenglish: "Student",
+              COSYfrançais: "L'étudiante",
+              COSYitaliano: "La studentessa",
+              COSYespañol: "",
+              COSYportuguês: "",
+              COSYdeutsch: "",
+              ΚΟΖΥελληνικά: "η μαθήτρια",
+              ТАКОЙрусский: "",
+              ԾՈՍՅհայկական: ""
+            }
+          },
+          { src: "https://knowt-user-attachments.s3.amazonaws.com/df25f307-75ec-4302-9cdf-3a2717142c46.jpg", alt: "Student",
+            translations: {
+              COSYenglish: "Student",
+              COSYfrançais: "L'étudiant",
+              COSYitaliano: "Lo studente",
+              COSYespañol: "",
+              COSYportuguês: "",
+              COSYdeutsch: "",
+              ΚΟΖΥελληνικά: "ο μαθητής",
+              ТАКОЙрусский: "",
+              ԾՈՍՅհայկական: ""
+            }
+          },
+          { src: "https://knowt-user-attachments.s3.amazonaws.com/685a6f52-53b1-4e8d-9f1b-2dfb606d737c.jpg", alt: "Teacher",
+            translations: {
+              COSYenglish: "Teacher",
+              COSYfrançais: "La professeur",
+              COSYitaliano: "La professoressa",
+              COSYespañol: "",
+              COSYportuguês: "",
+              COSYdeutsch: "",
+              ΚΟΖΥελληνικά: "η δασκάλα",
+              ТАКОЙрусский: "",
+              ԾՈՍՅհայկական: ""
+            }
+          },
+          { src: "https://knowt-user-attachments.s3.amazonaws.com/b9578d45-6894-47be-b7f4-751763537360.jpg", alt: "Teacher",
+            translations: {
+              COSYenglish: "Teacher",
+              COSYfrançais: "Le professeur",
+              COSYitaliano: "Il professore",
+              COSYespañol: "",
+              COSYportuguês: "",
+              COSYdeutsch: "",
+              ΚΟΖΥελληνικά: "ο δάσκαλος",
+              ТАКОЙрусский: "",
+              ԾՈՍՅհայկական: ""
+            }
+          },
+          { src: "https://knowt-user-attachments.s3.amazonaws.com/69591591-9112-49ec-a554-f1d055855c5e.jpg", alt: "Nice to meet you",
+            translations: {
+              COSYenglish: "Nice to meet you",
+              COSYfrançais: "Enchanté.e",
+              COSYitaliano: "Piacere",
+              COSYespañol: "",
+              COSYportuguês: "",
+              COSYdeutsch: "",
+              ΚΟΖΥελληνικά: "Χαίρω πολύ",
+              ТАКОЙрусский: "",
+              ԾՈՍՅհայկական: ""
+            }
+          },
         ],
         3: [
           { src: "https://i.imgur.com/m4wKJ8f.jpg", alt: "Mother and son",
