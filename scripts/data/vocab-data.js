@@ -1,3 +1,5 @@
+// Vocabulary data for COSYlanguages
+
 const vocabData = {
   COSYenglish: {
     1: ["Hello", "Goodbye", "Yes", "No", "Thank you", "You're welcome"],
@@ -7,7 +9,9 @@ const vocabData = {
     5: ["Good", "Bad", "Easy", "Difficult", "Boring", "Interesting", "Big", "Small", "Hot", "Cold", "Cheap", "Expensive"],
     6: ["Iced", "Green", "Orange", "Red", "White", "Apple", "Pink", "Black"],
     7: ["Russia", "The UK", "Italy", "Germany", "Greece", "China", "France", "The USA", "Russian", "Greek", "German", "French", "Italian", "American", "British", "English", "Chinese"],
-    8: ["Police officer", "Policeman", "Policewoman", "Businessperson", "Businesswoman", "Businessman", "Singer", "Chef", "Cook", "Firefighter", "Actor", "Actress", "Waiter", "Waitress", "Doctor", "Teacher", "Programmer", "Salesperson", "Salesman", "Saleswoman"]
+    8: ["Police officer", "Policeman", "Policewoman", "Businessperson", "Businesswoman", "Businessman", "Singer", "Chef", "Cook", "Firefighter", "Actor", "Actress", "Waiter", "Waitress", "Doctor", "Teacher", "Programmer", "Salesperson", "Salesman", "Saleswoman"],
+    9: [],
+    10: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
   },
   COSYfrançais: {
     1: ["Bonjour", "Au revoir", "Oui", "Non", "Merci", "De rien"],
