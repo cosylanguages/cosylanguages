@@ -1,3 +1,5 @@
+// Utility functions for COSYlanguages
+
 // Validate range input: dayFrom <= dayTo
 function validDayRange(from, to) {
   if (!from || !to) return false;
@@ -49,6 +51,28 @@ function speakText(text, language) {
   }
 
   window.speechSynthesis.speak(utterance);
+}
+
+function getGrammarItems(grammarData, language, days, type) {
+  let combinedGrammar = [];
+  for (const d of days) {
+    if (grammarData[language][d]) {
+      if (d === 3) {
+        // Special handling for day 3 (to have / possessives)
+        combinedGrammar.push({ type: 'to_have', items: grammarData[language][d].to_have });
+        combinedGrammar.push({ type: 'possessives', items: grammarData[language][d].possessives });
+      } else {
+        combinedGrammar = combinedGrammar.concat(grammarData[language][d]);
+      }
+    }
+  }
+  
+  if (type) {
+    combinedGrammar = combinedGrammar.find(g => g.type === type);
+    return combinedGrammar ? combinedGrammar.items : [];
+  }
+  
+  return combinedGrammar;
 }
 
 // Practice handlers
