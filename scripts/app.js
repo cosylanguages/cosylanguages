@@ -20,10 +20,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Handle submenu button clicks
   document.querySelectorAll('.submenu-btn').forEach(btn => {
-    btn.addEventListener('click', function() {
+    btn.addEventListener('click', function(e) {
+      e.preventDefault();
       const practiceType = this.getAttribute('data-practice');
       const language = languageSelect.value;
       const day = daySelect.value;
+      
+      if (!language || !day) {
+        alert("Please select both language and day first");
+        return;
+      }
       
       // Clear previous result
       resultContainer.innerHTML = '';
@@ -47,7 +53,8 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Main function to handle the "Show" button click
-  showButton.addEventListener("click", () => {
+  showButton.addEventListener("click", (e) => {
+    e.preventDefault();
     const language = languageSelect.value;
     const day = daySelect.value;
     const dayFrom = dayFromSelect.value;
@@ -89,6 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
     switch (practiceType) {
       case "vocabulary_practice":
         // Handled by submenu
+        vocabSubmenu.style.display = 'flex';
         break;
       case "random_word":
         handleRandomWord(language, daysToUse, resultContainer);
