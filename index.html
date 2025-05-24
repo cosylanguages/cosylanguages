@@ -71,46 +71,36 @@
           <select id="practice-type-select">
             <option value="">--Select Practice--</option>
             <option value="vocabulary_practice">Vocabulary Practice</option>
-            <option value="random_grammar">Random Grammar</option>
-            <option value="grammar_gender">Grammar Gender Practice</option>
-            <option value="random_speaking">Random Speaking</option>
+            <option value="grammar_practice">Grammar Practice</option>
+            <option value="speaking_practice">Speaking Practice</option>
           </select>
         </div>
 
-        <div id="vocabulary-submenu" class="submenu" style="display: none;">
+        <div id="vocabulary-submenu" class="submenu">
           <button class="submenu-btn" data-practice="random_word">Random Word</button>
           <button class="submenu-btn" data-practice="random_image">Random Image</button>
-          <button class="submenu-btn" data-practice="crossword">Crossword</button>
         </div>
 
-        <button id="show-button" class="btn" type="button">Show</button>
+        <div id="grammar-submenu" class="submenu">
+          <button class="submenu-btn" data-practice="gender">Gender</button>
+        </div>
+
+        <button id="show-button" class="btn" type="button" tabindex="0" aria-label="Show Practice">Show Practice</button>
       </div>
 
       <div id="result-container" class="result-container">
-        <div id="crossword-container" style="display: none;">
-          <div id="crossword-clue"></div>
-          <div id="crossword-image" class="crossword-image"></div>
-          <input type="text" id="crossword-input" placeholder="Type your answer...">
-          <button id="crossword-submit">Check Answer</button>
-          <div id="crossword-feedback"></div>
-        </div>
-
-        <div id="grammar-practice-container" style="display: none;">
-          <div id="grammar-question"></div>
-          <div id="grammar-options" class="grammar-gender-options"></div>
-          <div id="grammar-feedback"></div>
-        </div>
+        <!-- Practice content will be injected here by JS -->
       </div>
     </div>
   </div>
 
+  <!-- Scripts loaded at the end for performance -->
   <script src="scripts/data/vocab-data.js"></script>
   <script src="scripts/data/grammar-data.js"></script>
   <script src="scripts/data/speaking-data.js"></script>
   <script src="scripts/data/image-data.js"></script>
   <script src="scripts/data/translations.js"></script>
   <script src="scripts/data/voices.js"></script>
-  <script src="scripts/data/crossword-data.js"></script>
   <script src="scripts/data/gender-practice-data.js"></script>
   <script src="scripts/utils.js"></script>
   <script src="scripts/app.js"></script>
