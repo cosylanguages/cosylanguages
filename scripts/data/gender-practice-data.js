@@ -1,12 +1,15 @@
+// Gender practice data for COSYlanguages
+
 const genderPracticeData = {
   COSYfrançais: {
     1: [
-      { word: "garçon", article: "le" },
-      { word: "fille", article: "la" },
-      { word: "professeur", article: "le/la" },
-      { word: "boisson", article: "la" },
-      { word: "homme", article: "le" },
-      { word: "femme", article: "la" }
+      { word: "eau", article: "l'" },
+      { word: "jus", article: "le" },
+      { word: "bière", article: "la" },
+      { word: "vin", article: "le" },
+      { word: "café", article: "le" },
+      { word: "thé", article: "le" },
+      { word: "carte", article: "la" }
     ],
     2: [
       { word: "livre", article: "le" },
