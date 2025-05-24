@@ -45,21 +45,32 @@ h1::after {
   border-radius: 2px;
 }
 
-#selectors-container {
-  width: 90%;
-  max-width: 800px;
+.main-container {
+  max-width: 1200px;
+  margin: 0 auto;
   background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(10px);
   border-radius: 15px;
-  padding: 25px 30px;
   box-shadow: var(--shadow);
-  margin-bottom: 40px;
+  padding: 25px 30px;
   border: 1px solid rgba(255, 255, 255, 0.2);
   transition: var(--transition);
 }
 
-#selectors-container:hover {
+.main-container:hover {
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+}
+
+.content-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.controls-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .selector-group {
@@ -105,7 +116,7 @@ select:focus {
   box-shadow: 0 0 0 3px rgba(10, 186, 181, 0.3);
 }
 
-#show-button {
+.btn {
   background-color: var(--primary-dark);
   border: none;
   color: #fff;
@@ -124,17 +135,17 @@ select:focus {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-#show-button:hover {
+.btn:hover {
   background-color: var(--primary-light);
   transform: translateY(-3px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-#show-button:active {
+.btn:active {
   transform: translateY(1px);
 }
 
-#show-button::after {
+.btn::after {
   content: '';
   position: absolute;
   top: 50%;
@@ -148,7 +159,7 @@ select:focus {
   transform-origin: 50% 50%;
 }
 
-#show-button:focus:not(:active)::after {
+.btn:focus:not(:active)::after {
   animation: ripple 1s ease-out;
 }
 
@@ -163,9 +174,8 @@ select:focus {
   }
 }
 
-#result-container {
-  width: 90%;
-  max-width: 800px;
+.result-container {
+  width: 100%;
   min-height: 200px;
   background-color: var(--bg-transparent);
   backdrop-filter: blur(8px);
@@ -183,22 +193,154 @@ select:focus {
   word-break: break-word;
   transition: var(--transition);
   border: 1px solid rgba(255, 255, 255, 0.2);
+  flex-direction: column;
 }
 
-#result-container:hover {
+.result-container:hover {
   box-shadow: inset 0 0 20px rgba(10, 186, 181, 0.4);
 }
 
-/* Language backgrounds */
-option[data-bg="COSYenglish"] { background-color: #a2d2ff; color: #000; }
-option[data-bg="COSYfrançais"] { background-color: #fcbf49; color: #000; }
-option[data-bg="COSYitaliano"] { background-color: #d90429; color: #fff; }
-option[data-bg="COSYespañol"] { background-color: #f72585; color: #fff; }
-option[data-bg="COSYportuguês"] { background-color: #52b788; color: #000; }
-option[data-bg="COSYdeutsch"] { background-color: #ffb703; color: #000; }
-option[data-bg="ΚΟΖΥελληνικά"] { background-color: #023047; color: #fff; }
-option[data-bg="ТАКОЙрусский"] { background-color: #fb8500; color: #000; }
-option[data-bg="ԾՈՍՅհայկական"] { background-color: #7209b7; color: #fff; }
+/* Submenu styles */
+.submenu {
+  display: flex;
+  gap: 10px;
+  margin: 15px 0;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.submenu-btn {
+  padding: 8px 16px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.submenu-btn:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Crossword styles */
+#crossword-container {
+  text-align: center;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.crossword-image {
+  max-width: 300px;
+  max-height: 300px;
+  margin: 15px auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#crossword-clue {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  color: var(--text-dark);
+  font-weight: 600;
+}
+
+#crossword-input {
+  padding: 10px 15px;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  border: 2px solid var(--primary);
+  width: 80%;
+  max-width: 400px;
+  margin: 10px 0;
+}
+
+#crossword-submit {
+  padding: 10px 25px;
+  background-color: var(--primary-dark);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: var(--transition);
+}
+
+#crossword-submit:hover {
+  background-color: var(--primary-light);
+}
+
+#crossword-feedback {
+  margin-top: 15px;
+  font-size: 1.2rem;
+  min-height: 30px;
+}
+
+/* Grammar gender practice */
+#grammar-practice-container {
+  width: 100%;
+}
+
+.grammar-gender-options {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
+
+.gender-option {
+  padding: 10px 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: var(--text-dark);
+  transition: var(--transition);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.gender-option:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.correct {
+  background-color: #4CAF50 !important;
+  color: white !important;
+}
+
+.incorrect {
+  background-color: #F44336 !important;
+  color: white !important;
+}
+
+.show-answer {
+  background-color: #FFC107 !important;
+  color: var(--text-dark) !important;
+}
+
+#grammar-question {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: var(--text-dark);
+  font-weight: 600;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.7);
+  transition: var(--transition);
+}
+
+#grammar-question:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+#grammar-feedback {
+  margin-top: 15px;
+  font-size: 1.2rem;
+  min-height: 30px;
+}
 
 /* Image styles */
 .vocab-image {
@@ -299,6 +441,17 @@ option[data-bg="ԾՈՍՅհայկական"] { background-color: #7209b7; color: #
   font-size: 1.3rem;
 }
 
+/* Language backgrounds */
+option[data-bg="COSYenglish"] { background-color: #a2d2ff; color: #000; }
+option[data-bg="COSYfrançais"] { background-color: #fcbf49; color: #000; }
+option[data-bg="COSYitaliano"] { background-color: #d90429; color: #fff; }
+option[data-bg="COSYespañol"] { background-color: #f72585; color: #fff; }
+option[data-bg="COSYportuguês"] { background-color: #52b788; color: #000; }
+option[data-bg="COSYdeutsch"] { background-color: #ffb703; color: #000; }
+option[data-bg="ΚΟΖΥελληνικά"] { background-color: #023047; color: #fff; }
+option[data-bg="ТАКОЙрусский"] { background-color: #fb8500; color: #000; }
+option[data-bg="ԾՈՍՅհայկական"] { background-color: #7209b7; color: #fff; }
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   h1 {
@@ -323,6 +476,14 @@ option[data-bg="ԾՈՍՅհայկական"] { background-color: #7209b7; color: #
   #result-container {
     font-size: 1.5rem;
     padding: 20px;
+  }
+  
+  .submenu {
+    flex-direction: column;
+  }
+  
+  .submenu-btn {
+    width: 100%;
   }
 }
 
