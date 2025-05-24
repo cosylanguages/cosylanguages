@@ -1,3 +1,4 @@
+// Voices data for COSYlanguages
 const voiceLanguageMap = {
   COSYenglish: { lang: "en-US", voiceURI: "Google US English" },
   COSYfrançais: { lang: "fr-FR", voiceURI: "Google français" },
