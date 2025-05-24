@@ -1,3 +1,5 @@
+// Translation data for COSYlanguages
+
 const questionTranslations = {
   COSYenglish: {
     what: "What is it?",
@@ -5,8 +7,8 @@ const questionTranslations = {
     choose: "Choose grammar practice for Day 3:"
   },
   COSYfrançais: {
-    what: "Qu'est-ce que c'est?",
-    who: "Qui est-ce?",
+    what: "C'est quoi?",
+    who: "C'est qui?",
     choose: "Choisissez la pratique de grammaire pour le jour 3:"
   },
   COSYitaliano: {
